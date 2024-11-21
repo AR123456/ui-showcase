@@ -2993,6 +2993,11 @@ MonoBehaviour:
   _tracer: {fileID: 939328719}
   _canFire: 1
   _bloodSplat: {fileID: 1872656274248532018, guid: 107c2242f64d248e19491f4b45feef62, type: 3}
+--- !u!4 &649521464 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1455644175646023067, guid: 037ff303939d8834fb5dcdf9eda15708, type: 3}
+  m_PrefabInstance: {fileID: 747932648}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -6147,6 +6152,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6422908120475394204, guid: 0aae3ef7ac6c0fa41941114060751d96, type: 3}
   m_PrefabInstance: {fileID: 387401083}
   m_PrefabAsset: {fileID: 0}
+--- !u!195 &1101080415 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 6422908119604098833, guid: 0aae3ef7ac6c0fa41941114060751d96, type: 3}
+  m_PrefabInstance: {fileID: 387401083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1101080419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6159,8 +6169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cfdd2e123d398145915d5d738548bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agent: {fileID: 0}
-  _target: {fileID: 0}
+  _agent: {fileID: 1101080415}
+  _target: {fileID: 649521464}
   _speed: 1.5
   _health: 100
 --- !u!1001 &1121571524
