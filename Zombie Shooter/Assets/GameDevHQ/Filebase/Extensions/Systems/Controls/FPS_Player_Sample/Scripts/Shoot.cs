@@ -12,6 +12,8 @@ public class Shoot : MonoBehaviour
     private bool _canFire = true;
     [SerializeField]
     private GameObject _bloodSplat;
+    [SerializeField]
+    private int _damageAmount=20;
     
     // Start is called before the first frame update
     void Start()
@@ -48,7 +50,7 @@ public class Shoot : MonoBehaviour
                 {
                     GameObject blood = Instantiate(_bloodSplat, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
                     Destroy(blood, 5.0f);
-                    enemy.Damage(20);
+                    enemy.Damage(_damageAmount);
                 }
             }
         }

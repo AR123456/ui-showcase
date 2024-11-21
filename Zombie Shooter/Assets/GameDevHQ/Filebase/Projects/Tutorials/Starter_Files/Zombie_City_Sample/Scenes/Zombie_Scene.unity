@@ -3061,6 +3061,7 @@ MonoBehaviour:
   _tracer: {fileID: 939328719}
   _canFire: 1
   _bloodSplat: {fileID: 1872656274248532018, guid: 107c2242f64d248e19491f4b45feef62, type: 3}
+  _damageAmount: 100
 --- !u!4 &649521464 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1455644175646023067, guid: 037ff303939d8834fb5dcdf9eda15708, type: 3}
