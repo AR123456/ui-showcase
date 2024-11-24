@@ -18,9 +18,12 @@ public class Player : MonoBehaviour
         
     }
 
-    // Update is called once per frame ) (60 frames per second)
+    // Update is called once per frame ) (about 60 frames per second)
     void Update()
     {
-        
+        // this is the same as 
+       // transform.Translate(new Vector3(1, 0, 0));
+        // this 
+       transform.Translate(Vector3.right * Time.deltaTime);
     }
 }
