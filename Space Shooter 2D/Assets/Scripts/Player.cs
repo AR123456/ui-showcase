@@ -22,8 +22,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         // this is the same as 
-       // transform.Translate(new Vector3(1, 0, 0));
+       // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
         // this 
-       transform.Translate(Vector3.right * Time.deltaTime);
+       transform.Translate(Vector3.right * 5 *  Time.deltaTime );
+     
     }
 }
