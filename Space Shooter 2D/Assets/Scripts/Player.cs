@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
     // variable declorations 
     [SerializeField]
     private float _speed = 3.5f;
-        // Start is called before the first frame update
+    // Start is called before the first frame update
+     
     void Start()
     {
         // take the current positon as the start of the game (0,0,0)
@@ -22,8 +23,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame ) (about 60 frames per second)
     void Update()
     {
-     // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
-     // using speed var
-       transform.Translate(Vector3.right * _speed *  Time.deltaTime );
+        // make this local  var = to the keyboard input
+        float horizontalInput = Input.GetAxis("Horizontal");
+        // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
+        // using speed var
+        transform.Translate(Vector3.right * horizontalInput*_speed *  Time.deltaTime );
+
+
          }
 }
