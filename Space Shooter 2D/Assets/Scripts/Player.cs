@@ -25,9 +25,11 @@ public class Player : MonoBehaviour
     {
         // make this local  var = to the keyboard input
         float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
         // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
         // using speed var
-        transform.Translate(Vector3.right * horizontalInput*_speed *  Time.deltaTime );
+        transform.Translate(Vector3.right * horizontalInput * _speed *  Time.deltaTime );
+        transform.Translate(Vector3.up * verticalInput * _speed * Time.deltaTime);
 
 
          }
