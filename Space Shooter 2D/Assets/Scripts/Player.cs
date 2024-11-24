@@ -11,23 +11,18 @@ public class Player : MonoBehaviour
 {
     // variable declorations 
     public float speed = 3.5f;
-
-    // Start is called before the first frame update
+        // Start is called before the first frame update
     void Start()
     {
         // take the current positon as the start of the game (0,0,0)
-        // vector 3 uses new keyword
-        transform.position = new Vector3(0, 0, 0);
-        
-    }
+           transform.position = new Vector3(0, 0, 0);
+         }
 
     // Update is called once per frame ) (about 60 frames per second)
     void Update()
     {
-       
-       // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
+     // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
      // using speed var
        transform.Translate(Vector3.right * speed *  Time.deltaTime );
-     
-    }
+         }
 }
