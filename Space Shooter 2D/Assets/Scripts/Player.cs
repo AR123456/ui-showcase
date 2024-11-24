@@ -10,7 +10,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // variable declorations 
-    public float speed = 3.5f;
+    [SerializeField]
+    private float _speed = 3.5f;
         // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,6 @@ public class Player : MonoBehaviour
     {
      // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
      // using speed var
-       transform.Translate(Vector3.right * speed *  Time.deltaTime );
+       transform.Translate(Vector3.right * _speed *  Time.deltaTime );
          }
 }
