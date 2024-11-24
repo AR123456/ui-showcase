@@ -9,6 +9,9 @@ using UnityEngine;
 //MonoBehaviour comes with void Start() and void Update()
 public class Player : MonoBehaviour
 {
+    // variable declorations 
+    public float speed = 3.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +24,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame ) (about 60 frames per second)
     void Update()
     {
-        // this is the same as 
+       
        // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
-        // this 
-       transform.Translate(Vector3.right * 5 *  Time.deltaTime );
+     // using speed var
+       transform.Translate(Vector3.right * speed *  Time.deltaTime );
      
     }
 }
