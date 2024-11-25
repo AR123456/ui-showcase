@@ -23,17 +23,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame ) (about 60 frames per second)
     void Update()
     {
-        // make this local  var = to the keyboard input
+        //local  vars = to the keyboard input
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-
-        // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
+        Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
+                // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
         // using speed var
         //transform.Translate(Vector3.right * horizontalInput * _speed *  Time.deltaTime );
         // transform.Translate(Vector3.up * verticalInput * _speed * Time.deltaTime);
         // optimized for one line of code 
-        transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * _speed * Time.deltaTime);
-
-
-         }
+        transform.Translate(direction * _speed * Time.deltaTime);
+                 }
 }
