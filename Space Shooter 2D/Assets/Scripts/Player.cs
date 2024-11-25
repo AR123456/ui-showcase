@@ -32,13 +32,14 @@ public class Player : MonoBehaviour
         // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
         transform.Translate(direction * _speed * Time.deltaTime);
         // if player position on y is greater than 0 , y pos =0
-
-        if (transform.position.y>=0)
+              if (transform.position.y>=0)
         {
             // set new position , Vector3 needs all 3 
              transform.position= new Vector3(transform.position.x,0,0);
         }
-
-
-                 }
+        else if (transform.position.y<=0)
+        {
+            transform.position = new Vector3(transform.position.x,0,0);
+        }
+    }
 }
