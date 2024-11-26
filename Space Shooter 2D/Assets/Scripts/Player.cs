@@ -24,29 +24,34 @@ public class Player : MonoBehaviour
     // Update is called once per frame ) (about 60 frames per second)
     void Update()
     {
+       
+    }
+// custom method resposible for all things movement related 
+void CalculateMovement()
+    {
         //local  vars = to the keyboard input
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-              // creating new Vector
+        // creating new Vector
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
         // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
         transform.Translate(direction * _speed * Time.deltaTime);
         // if player position on y is greater than 0 , y pos =0
-              if (transform.position.y>=0)
+        if (transform.position.y >= 0)
         {
             // set new position , Vector3 needs all 3 
-             transform.position= new Vector3(transform.position.x,0,0);
+            transform.position = new Vector3(transform.position.x, 0, 0);
         }
-        else if (transform.position.y<=-3.8f)
+        else if (transform.position.y <= -3.8f)
         {
-            transform.position = new Vector3(transform.position.x,-3.8f,0);
+            transform.position = new Vector3(transform.position.x, -3.8f, 0);
         }
         // x stop on let at -11 , on R if 11 reached reset postion to -11
-        if (transform.position.x<=-11)
+        if (transform.position.x <= -11)
         {
             transform.position = new Vector3(11, transform.position.y, 0);
         }
-        else if (transform.position.x >=11)
+        else if (transform.position.x >= 11)
         {
             transform.position = new Vector3(-11, transform.position.y, 0);
         }
