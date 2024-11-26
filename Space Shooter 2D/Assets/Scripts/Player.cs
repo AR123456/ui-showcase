@@ -42,13 +42,13 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(transform.position.x,-3.8f,0);
         }
         // x stop on let at -7.32 , on R if 11 reached reset postion to -7.32
-        if (transform.position.x<=-7.32)
+        if (transform.position.x<=-11)
         {
-            transform.position = new Vector3(-7.32f, transform.position.y, 0);
+            transform.position = new Vector3(-11, transform.position.y, 0);
         }
         else if (transform.position.x >=11)
         {
-            transform.position = new Vector3(-7.32f, transform.position.y, 0);
+            transform.position = new Vector3(-11, transform.position.y, 0);
         }
     }
 }
