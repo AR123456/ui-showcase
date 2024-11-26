@@ -24,9 +24,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame ) (about 60 frames per second)
     void Update()
     {
-       
+        // call coid CalculateMovement() from here 
+        CalculateMovement();
     }
-// custom method resposible for all things movement related 
+// custom method resposible for all things movement related - call this from update 
 void CalculateMovement()
     {
         //local  vars = to the keyboard input
