@@ -37,9 +37,9 @@ public class Player : MonoBehaviour
             // set new position , Vector3 needs all 3 
              transform.position= new Vector3(transform.position.x,0,0);
         }
-        else if (transform.position.y<=0)
+        else if (transform.position.y<=-3.8f)
         {
-            transform.position = new Vector3(transform.position.x,0,0);
+            transform.position = new Vector3(transform.position.x,-3.8f,0);
         }
     }
 }
