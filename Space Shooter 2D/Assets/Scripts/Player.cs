@@ -1,5 +1,5 @@
 ﻿// name spaces or code libarys
-// .net frame work 
+ 
 using System.Collections;
 using System.Collections.Generic;
 // MonoBehavior is from the Unity name space
@@ -9,9 +9,12 @@ using UnityEngine;
 //MonoBehaviour comes with void Start() and void Update()
 public class Player : MonoBehaviour
 {
-    // serializedfiled exposes _speed to editor even though it is private
+    // 
+    // serializedfiled exposes _speed to editor even though it is private public vars are exposed there out of box
     [SerializeField]
     private float _speed = 3.5f;
+    [SerializeField]
+    private GameObject _laserPrefab;
     // Start is called before the first frame update
          void Start()
     {
