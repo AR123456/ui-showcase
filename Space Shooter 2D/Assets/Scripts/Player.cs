@@ -24,9 +24,10 @@ public class Player : MonoBehaviour
       CalculateMovement();
         // when the space bar is pressed, fire laser
         // if I hit space bar 
-        // spawn game object  
-        if (Input.GetKeyDown(KeyCode.Space));
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+            // spawn game object  
+            Debug.Log("space bar was hit");
 
         }
     }
