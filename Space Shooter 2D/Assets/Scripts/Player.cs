@@ -9,28 +9,24 @@ using UnityEngine;
 //MonoBehaviour comes with void Start() and void Update()
 public class Player : MonoBehaviour
 {
-    // variable declorations 
     // serializedfiled exposes _speed to editor even though it is private
     [SerializeField]
     private float _speed = 3.5f;
     // Start is called before the first frame update
-     
-    void Start()
+         void Start()
     {
-        // take the current positon as the start of the game (0,0,0)
+        //positon as the start of the game (x,y,z)
            transform.position = new Vector3(0, 0, 0);
          }
-
-    // Update is called once per frame ) (about 60 frames per second)
+        // Update is called once per frame ) (about 60 frames per second)
     void Update()
     {
-        // call coid CalculateMovement() from here 
-        CalculateMovement();
+      CalculateMovement();
     }
 // custom method resposible for all things movement related - call this from update 
 void CalculateMovement()
     {
-        //local  vars = to the keyboard input
+        //local vars = to the keyboard input
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         // creating new Vector
