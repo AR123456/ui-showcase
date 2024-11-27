@@ -37,7 +37,6 @@ void CalculateMovement()
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
         // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
         transform.Translate(direction * _speed * Time.deltaTime);
-        
         // using clamp for y 
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.8f, 0),0);
         // x stop on let at -11 , on R if 11 reached reset postion to -11
