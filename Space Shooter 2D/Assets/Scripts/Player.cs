@@ -37,16 +37,9 @@ void CalculateMovement()
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
         // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
         transform.Translate(direction * _speed * Time.deltaTime);
-        // if player position on y is greater than 0 , y pos =0
-        if (transform.position.y >= 0)
-        {
-            // set new position , Vector3 needs all 3 
-            transform.position = new Vector3(transform.position.x, 0, 0);
-        }
-        else if (transform.position.y <= -3.8f)
-        {
-            transform.position = new Vector3(transform.position.x, -3.8f, 0);
-        }
+        
+        // using clamp for y 
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.8f, 0),0);
         // x stop on let at -11 , on R if 11 reached reset postion to -11
         if (transform.position.x <= -11)
         {
