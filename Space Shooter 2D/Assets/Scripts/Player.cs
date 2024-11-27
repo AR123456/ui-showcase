@@ -22,6 +22,13 @@ public class Player : MonoBehaviour
     void Update()
     {
       CalculateMovement();
+        // when the space bar is pressed, fire laser
+        // if I hit space bar 
+        // spawn game object  
+        if (Input.GetKeyDown(KeyCode.Space));
+        {
+
+        }
     }
 // custom method resposible for all things movement related - call this from update 
 void CalculateMovement()
