@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
+    // speed variable of 8 
+    [SerializeField]
+    private float _lzspeed = 8;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +18,6 @@ public class Laser : MonoBehaviour
     void Update()
     {
         // laser behavior here - move up infinantly 
-        transform.position = new Vector3(0, Mathf.Sin(Time.time), 0);
+        transform.position = new Vector3(0, 1 +_lzspeed, 0);
     }
 }
