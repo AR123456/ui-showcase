@@ -30,8 +30,8 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // spawn game object  
-            Debug.Log("space bar was hit");
-
+            // Debug.Log("space bar was hit");
+            Instantiate(_laserPrefab);
         }
     }
 // custom method resposible for all things movement related - call this from update 
