@@ -6,12 +6,12 @@ public class Laser : MonoBehaviour
 {
     // speed variable of 8 
     [SerializeField]
-    private float _lzspeed = 8;
+    private float _lzspeed = 8.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(0, 0, 0);
+        
     }
 
     // Update is called once per frame
@@ -19,6 +19,6 @@ public class Laser : MonoBehaviour
     {
         // laser behavior here - move up infinantly 
         // transform of laser
-        transform.Translate(Vector3.up*Time.deltaTime);
+        transform.Translate(Vector3.up*_lzspeed*Time.deltaTime);
     }
 }
