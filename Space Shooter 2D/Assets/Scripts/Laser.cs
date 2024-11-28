@@ -18,6 +18,7 @@ public class Laser : MonoBehaviour
     void Update()
     {
         // laser behavior here - move up infinantly 
-        transform.position = new Vector3(0, 1 +_lzspeed, 0);
+        // transform of laser
+        transform.Translate(Vector3.up*Time.deltaTime);
     }
 }
