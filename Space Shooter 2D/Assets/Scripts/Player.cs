@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     private float _speed = 3.5f;
     [SerializeField]
     private GameObject _laserPrefab;
+    [SerializeField]
+    private float _fireRate = 0.5f;
     // Start is called before the first frame update
          void Start()
     {
@@ -30,9 +32,9 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // spawn game object  
-            // Debug.Log("space bar was hit");
-           // Instantiate(_laserPrefab,transform.position,Quaternion.identity);
-            Instantiate(_laserPrefab, new Vector3(0,0.8f,0), Quaternion.identity);
+            // Instantiate(_laserPrefab,transform.position,Quaternion.identity);
+            Instantiate(_laserPrefab, transform.position + new Vector3(0,0.8f,0), Quaternion.identity);
+           
         }
     }
 // custom method resposible for all things movement related - call this from update 
