@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _laserPrefab;
     [SerializeField]
-    private float _fireRate = 0.5f;
+    private float _fireRate = 0.15f;
     [SerializeField]
     private float _nextFire = 0.0f;
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     {
       CalculateMovement();
         // when the space bar is pressed, fire laser if cooldown condition met
-        if (Input.GetKeyDown(KeyCode.Space)&& Time.time > _nextFire )
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > _nextFire )
         {
             // spawn game object  
             // keep track of this fire for next one
