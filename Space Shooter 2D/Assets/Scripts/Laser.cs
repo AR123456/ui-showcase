@@ -21,8 +21,9 @@ public class Laser : MonoBehaviour
 
         if (transform.position.y > 6.9f)
         {
-            Debug.Log("dump trash");
+       
            Destroy(gameObject);
+            //or Destroy(this.gameObject)
         }
     }
 }
