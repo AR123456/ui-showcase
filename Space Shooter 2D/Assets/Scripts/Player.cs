@@ -1,16 +1,13 @@
 ﻿// name spaces or code libarys
- 
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 // MonoBehavior is from the Unity name space
 using UnityEngine;
-// : extends or inherits
 // Monobehavior unity specific term allow the drag and drop of scripts or behaviors into game objects to control them. 
 //MonoBehaviour comes with void Start() and void Update()
 public class Player : MonoBehaviour
 {
-    // 
-    // serializedfiled exposes _speed to editor even though it is private public vars are exposed there out of box
+    // serializedfiled exposes private, public vars are exposed there out of box
     [SerializeField]
     private float _speed = 3.5f;
     [SerializeField]
@@ -25,7 +22,7 @@ public class Player : MonoBehaviour
         //positon as the start of the game (x,y,z)
            transform.position = new Vector3(0, 0, 0);
          }
-        // Update is called once per frame ) (about 60 frames per second)
+        // Update is called once per frame (about 60 frames per second)
     void Update()
     {
       CalculateMovement();
@@ -36,8 +33,7 @@ public class Player : MonoBehaviour
             // keep track of this fire for next one
             _nextFire = Time.time + _fireRate;
             Instantiate(_laserPrefab, transform.position + new Vector3(0,0.8f,0), Quaternion.identity);
-           
-        }
+         }
     }
 // custom method resposible for all things movement related - call this from update 
 void CalculateMovement()
