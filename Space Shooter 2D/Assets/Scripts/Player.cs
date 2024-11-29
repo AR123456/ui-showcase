@@ -31,7 +31,8 @@ public class Player : MonoBehaviour
         {
             // spawn game object  
             // Debug.Log("space bar was hit");
-            Instantiate(_laserPrefab,transform.position,Quaternion.identity);
+           // Instantiate(_laserPrefab,transform.position,Quaternion.identity);
+            Instantiate(_laserPrefab, new Vector3(0,0.8f,0), Quaternion.identity);
         }
     }
 // custom method resposible for all things movement related - call this from update 
