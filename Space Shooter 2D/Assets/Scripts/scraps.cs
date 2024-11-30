@@ -1,18 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿
+float horizontalInput = Input.GetAxis("Horizontal");
+float verticalInput = Input.GetAxis("Vertical");
 
-public class scraps : MonoBehaviour
+if (verticalInput >= -15)
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // position is >= -14
+    transform.position = new Vector3(-3, 5.75f, 0);
+    transform.Translate(Vector3.down * (Time.time / _speed));
 }
