@@ -5,15 +5,11 @@ using UnityEngine;
 public class Laser : MonoBehaviour
 {
     [SerializeField]
-    private float _lzspeed = 8.0f;
-        // Start is called before the first frame update
-    void Start()
-    {      
-    }
+    private float _speed = 8.0f;
         // Update is called once per frame
     void Update()
     {
-         transform.Translate(Vector3.up*_lzspeed*Time.deltaTime);
+         transform.Translate(Vector3.up*_speed*Time.deltaTime);
         // if the laser position of the y coordinate is >= 6.09 it should be removed from the game. 
         if (transform.position.y > 6.9f)
         {
