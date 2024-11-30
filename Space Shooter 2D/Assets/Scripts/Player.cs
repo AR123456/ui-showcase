@@ -29,14 +29,18 @@ public class Player : MonoBehaviour
         // when the space bar is pressed, fire laser if cooldown condition met
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > _canFire )
         {
-            // spawn game object  
-            // keep track of this fire for next one
-            _canFire = Time.time + _fireRate;
-            Instantiate(_laserPrefab, transform.position + new Vector3(0,0.8f,0), Quaternion.identity);
+            FireLaser();
          }
     }
-// custom method resposible for all things movement related - call this from update 
-void CalculateMovement()
+    // custom method resposible for all things movement related - call this from update 
+    void FireLaser()
+    {
+        // spawn game object  
+        // keep track of this fire for next one
+        _canFire = Time.time + _fireRate;
+        Instantiate(_laserPrefab, transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
+    }
+    void CalculateMovement()
     {
         //local vars = to the keyboard input
         float horizontalInput = Input.GetAxis("Horizontal");
