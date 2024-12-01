@@ -67,8 +67,7 @@ public class Player : MonoBehaviour
     {
         // define the damage trait - here we take damage, thus removing live
         _lives--;
-        // check if dead
-        if (_lives < 1)
+      if (_lives < 1)
         {
             Destroy(this.gameObject);
         }

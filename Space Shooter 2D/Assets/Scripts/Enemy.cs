@@ -6,16 +6,12 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 4.0f;
- 
- 
-
-    // Start is called before the first frame update
+     // Start is called before the first frame update
     void Start()
     {
         // define starting position of cube Y of 5.73 looks like top of screen
         transform.position = new Vector3(0, 5.75f, 0);
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -32,12 +28,9 @@ public class Enemy : MonoBehaviour
     // detect collison 
     private void OnTriggerEnter(Collider other)
     {
-        //who hit who? 
-        // Debug.Log("Hit: " + other.transform.name);
-        // if other is Player
         //  damage Player (lives system) and then Destroy us (enemy) 
         if (other.tag=="Player")
-        {  //  Debug.Log("Player collision ");
+        {  
            // damage player sart with 3, decrement with each hit from laser 
            // set this variable in the Player script - use GetComponent to call it from here
            Player player = other.transform.GetComponent<Player>();
