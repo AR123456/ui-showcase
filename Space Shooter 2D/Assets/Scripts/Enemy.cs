@@ -36,17 +36,14 @@ public class Enemy : MonoBehaviour
         // Debug.Log("Hit: " + other.transform.name);
         // if other is Player
         //  damage Player (lives system) and then Destroy us (enemy) 
-        if (other.gameObject.tag=="Player")
+        if (other.tag=="Player")
         {
             //  Debug.Log("Player collision ");
-            Destroy(other.gameObject);
             Destroy(gameObject);
-
-        
-        }
+            }
         // if other is laser
         // Destroy Laser and then distroy us (enemy)
-        if (other.gameObject.tag =="Laser")
+        if (other.tag =="Laser")
         {
             //  Debug.Log("Laser collision ");
             Destroy(other.gameObject);
