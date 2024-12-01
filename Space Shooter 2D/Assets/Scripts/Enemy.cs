@@ -39,7 +39,9 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.tag=="Player")
         {
             //  Debug.Log("Player collision ");
+            Destroy(other.gameObject);
             Destroy(gameObject);
+
         
         }
         // if other is laser
@@ -47,6 +49,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.tag =="Laser")
         {
             //  Debug.Log("Laser collision ");
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
 
