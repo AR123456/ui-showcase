@@ -21,12 +21,26 @@ public class Enemy : MonoBehaviour
     {
         // move down at rate of 4 meters per second - use deltatime, not time 
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
-        //when it moves down the full lentgth of the screen, re spawn it at the top with a new random x position - this saves the step of distroing it if it drops off screen
-        // bottom 0f screen -5f
+          // bottom 0f screen -5f
         if (transform.position.y <= -5f)
         {
             // rand numb between 8 and - 8 - make it a float
-            transform.position = new Vector3(Random.Range(-8f,8f), 5.75f, 0);
+            float randomX = Random.Range(-8f,8f);
+            transform.position = new Vector3(randomX, 5.75f, 0);
         }
     }
+    // detect collison 
+    private void OnTriggerEnter(Collider other)
+    {
+        //who hit who? 
+        // Debug.Log("Hit: " + other.transform.name);
+        // if other is Player
+        //  damage Player (lives system) and then Destroy us (enemy) 
+
+        // if other is laser
+        // Destroy Laser and then distroy us (enemy)
+
+    }
+
+
 }
