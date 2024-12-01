@@ -37,17 +37,27 @@ public class Enemy : MonoBehaviour
         // if other is Player
         //  damage Player (lives system) and then Destroy us (enemy) 
         if (other.tag=="Player")
-        {
-            //  Debug.Log("Player collision ");
-            Destroy(gameObject);
+        {  //  Debug.Log("Player collision ");
+           // damage player sart with 3, decrement with each hit from laser 
+           // set this variable in the Player script - use GetComponent to call it from here
+           Player player = other.transform.GetComponent<Player>();
+            // check for null first
+            if (player != null)
+            {
+            player.Damage();
+            }
+            // destory enemy
+            Destroy(this.gameObject);
             }
         // if other is laser
         // Destroy Laser and then distroy us (enemy)
         if (other.tag =="Laser")
         {
             //  Debug.Log("Laser collision ");
+            // Destory laser
             Destroy(other.gameObject);
-            Destroy(gameObject);
+            // Destroy enemy
+            Destroy(this.gameObject);
         }
 
     }
