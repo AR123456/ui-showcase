@@ -16,4 +16,7 @@ public class SpawnManager : MonoBehaviour
         
     }
     // spawn game objects every 5 seconds (coroutine)
+    IEnumerator Spawer() {
+    // some code
+    }
 }
