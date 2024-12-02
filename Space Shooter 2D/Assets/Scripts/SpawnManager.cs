@@ -25,11 +25,7 @@ public class SpawnManager : MonoBehaviour
     {
         // iterater for the while loop 
         int i = 1;
-        // wait 1 frame 
-        yield return null;
-        // then call this 
-     yield return new WaitForSeconds(5.0f);
-        // then do this 
+ 
 
         // infinte game loop  while  it will run as long as a contdition is due( beware the infinate loop) 
     
@@ -39,7 +35,8 @@ public class SpawnManager : MonoBehaviour
            Vector3 posToSpawn = new Vector3(Random.Range(-8f, 8f), 7f, 0);
        // instantiate object, need ref to it. - the enemy prefab - put ref to it above start 
             Instantiate(_enemyPrefab, posToSpawn,Quaternion.identity);
-            yield return new WaitForSeconds(5.0f);         
+            yield return new WaitForSeconds(5.0f);    
+            i ++;
         }
 
        
