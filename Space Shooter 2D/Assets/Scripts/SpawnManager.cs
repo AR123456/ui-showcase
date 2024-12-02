@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class SpawnManager : MonoBehaviour
       int i = 5;
         while (i <5)
         {
-            yield return new Enemy();
+            yield return GetComponent<Enemy>();
         }
         // infinte game loop  while  it will run as long as a contdition is due( beware the infinate loop) 
             // instantiate object, need ref to it. - the enemy prefab
