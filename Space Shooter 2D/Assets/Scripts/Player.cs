@@ -18,14 +18,14 @@ public class Player : MonoBehaviour
     private float _canFire = -1f;
     [SerializeField]
     private int _lives = 3;
-    public SpawnManager sendTo;
+ 
     // Start is called before the first frame update
     void Start()
     {
         //positon as the start of the game (x,y,z)
         transform.position = new Vector3(0, 0, 0);
         // getting the spawnmanager 
-        sendTo.SpawnRoutine();
+        
     }
     // Update is called once per frame (about 60 frames per second)
     void Update()
