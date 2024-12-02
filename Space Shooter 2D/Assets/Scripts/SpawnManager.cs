@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // call SpawnRoutine()
+        SpawnRoutine();
     }
 
     // Update is called once per frame
@@ -17,8 +17,13 @@ public class SpawnManager : MonoBehaviour
     }
     // spawn game objects every 5 seconds (coroutine)
     // create a coroutine of type IEnumerator 
-    IEnumerator SpawnRoutine()
+  public IEnumerator SpawnRoutine()
     {
+      int i = 5;
+        while (i <5)
+        {
+            yield return new Enemy();
+        }
         // infinte game loop  while  it will run as long as a contdition is due( beware the infinate loop) 
             // instantiate object, need ref to it. - the enemy prefab
                 // yeild events  - wait for 5 seconds
