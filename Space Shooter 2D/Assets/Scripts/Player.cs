@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
         _lives--;
       if (_lives < 1)
         {
+            // tell SpawnManager.cs to stop spawning 
             Destroy(this.gameObject);
         }
     }
