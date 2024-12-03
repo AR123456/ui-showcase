@@ -27,8 +27,8 @@ public class SpawnManager : MonoBehaviour
     {
         // in while loop only loop if player is alive
 
-            //while (true)
-            while (_stopSpawning)
+         //   while (true)
+            while (_stopSpawning == false)
         {
        //var to randsomize position of _enemyPrefab 
            Vector3 posToSpawn = new Vector3(Random.Range(-8f, 8f), 7f, 0);
