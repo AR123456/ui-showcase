@@ -26,7 +26,8 @@ public class Enemy : MonoBehaviour
         }
     }
     // detect collison 
-    private void OnTriggerEnter(Collider other)
+    // private void OnTriggerEnter(Collider other) - change to 2D 
+    private void OnTriggerEnter2D(Collider2D other)
     {
         //  damage Player (lives system) and then Destroy us (enemy) 
         if (other.tag=="Player")
