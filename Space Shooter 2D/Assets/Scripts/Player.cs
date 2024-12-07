@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     private float _speed = 3.5f;
     [SerializeField]
     private GameObject _laserPrefab;
+    // game object to store power up
+   [SerializeField]
+    private GameObject _tripleShotPrefab;
     [SerializeField]
     private float _fireRate = 0.15f;
     [SerializeField]
@@ -20,6 +23,8 @@ public class Player : MonoBehaviour
     private int _lives = 3;
     // communicate with Spawn Manager
     private SpawnManager _spawnManager;
+    // for testing triple shot serialize
+    [SerializeField]
     private bool _isTripleShotActive = false;
 
     // Start is called before the first frame update
@@ -51,8 +56,16 @@ public class Player : MonoBehaviour
         // spawn game object  
         // keep track of this fire for next one
         _canFire = Time.time + _fireRate;
-        Instantiate(_laserPrefab, transform.position + new Vector3(0, 1.05f, 0), Quaternion.identity);
-        // if the the triple shot is active, fire the triple shot, else just fire the one
+        if (_isTripleShotActive==true)
+        {
+
+            Instantiate(_tripleShotPrefab, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(_laserPrefab, transform.position + new Vector3(0, 1.05f, 0), Quaternion.identity);
+        }
+ 
     }
     void CalculateMovement()
     {
