@@ -56,9 +56,8 @@ public class Player : MonoBehaviour
         // spawn game object  
         // keep track of this fire for next one
         _canFire = Time.time + _fireRate;
-        if (_isTripleShotActive==true)
+        if (_isTripleShotActive == true)
         {
-
             Instantiate(_tripleShotPrefab, transform.position, Quaternion.identity);
         }
         else
