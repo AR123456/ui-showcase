@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     private int _lives = 3;
     // communicate with Spawn Manager
     private SpawnManager _spawnManager;
+    private bool _isTripleShotActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,7 @@ public class Player : MonoBehaviour
         // keep track of this fire for next one
         _canFire = Time.time + _fireRate;
         Instantiate(_laserPrefab, transform.position + new Vector3(0, 1.05f, 0), Quaternion.identity);
+        // if the the triple shot is active, fire the triple shot, else just fire the one
     }
     void CalculateMovement()
     {
