@@ -24,6 +24,8 @@ public class PowerUp : MonoBehaviour
         }
     }
     // detect collision with player
+    // only to be collectable by the player- tags
+    // on collect destroy
     private void OnTriggerEnter2D(Collider2D other)
     {
        if(other.tag == "Player")
@@ -31,11 +33,12 @@ public class PowerUp : MonoBehaviour
             Player player = other.transform.GetComponent<Player>();
             if (player !=null)
             {
-                 // communicate with the player script using other
-          
-                // destroy the power up 
-                Destroy(this.gameObject);
+                // communicate with the player script using other
+                player.TripleShotActive();          
+         
             }
+            // destroy the power up 
+            Destroy(this.gameObject);
         } 
     }
 
