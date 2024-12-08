@@ -190,7 +190,7 @@ MonoBehaviour:
   _fireRate: 0.15
   _canFire: -1
   _lives: 3
-  _isTripleShotActive: 1
+  _isTripleShotActive: 0
 --- !u!212 &309606809
 SpriteRenderer:
   m_ObjectHideFlags: 0
