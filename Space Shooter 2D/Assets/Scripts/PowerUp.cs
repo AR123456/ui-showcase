@@ -18,9 +18,9 @@ public class PowerUp : MonoBehaviour
         // move down at rate of 3 meters per second - use deltatime, not time 
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
         // bottom 0f screen -5f
-        if (transform.position.y <= -5f)
+        if (transform.position.y <= -4.5f)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
     // detect collision with player
@@ -32,8 +32,8 @@ public class PowerUp : MonoBehaviour
             if (player !=null)
             {
                  
-                 player._isTripleShotActive == true;
-                Destroy(gameObject);
+              //   player._isTripleShotActive == true;
+                Destroy(this.gameObject);
             }
         } 
     }
