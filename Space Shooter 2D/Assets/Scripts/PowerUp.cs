@@ -31,8 +31,9 @@ public class PowerUp : MonoBehaviour
             Player player = other.transform.GetComponent<Player>();
             if (player !=null)
             {
-                 
-              //   player._isTripleShotActive == true;
+                 // communicate with the player script using other
+          
+                // destroy the power up 
                 Destroy(this.gameObject);
             }
         } 
