@@ -14,7 +14,7 @@ public class SpawnManager : MonoBehaviour
         // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnRoutine());
+        StartCoroutine(SpawnEnemyRoutine());
     }
         // Update is called once per frame
     void Update()
@@ -23,7 +23,7 @@ public class SpawnManager : MonoBehaviour
     }
     // spawn game objects every 5 seconds (coroutine)
     // create a coroutine of type IEnumerator 
- IEnumerator SpawnRoutine()
+ IEnumerator SpawnEnemyRoutine()
     {
         // in while loop only loop if player is alive
 
@@ -37,11 +37,12 @@ public class SpawnManager : MonoBehaviour
             // parent object of the game object we just instantiated getting assigned to the transform
             newEnemy.transform.parent = _enemyContainer.transform;
             yield return new WaitForSeconds(5.0f);    
-    
-        }
-
-       
+            }
+   
     }
+    IEnumerator SpawnPowerupRoutine() { 
+    // every 3-7 seconds spawn in a power up 
+    };    
 
     public void onPlayerDeath()
     {
