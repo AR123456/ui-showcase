@@ -35,8 +35,7 @@ public class PowerUp : MonoBehaviour
             {
                 // communicate with the player script using other
                 player.TripleShotActive();          
-         
-            }
+                     }
             // destroy the power up 
             Destroy(this.gameObject);
         } 

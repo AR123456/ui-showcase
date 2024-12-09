@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    // method to controle powerup 
+    // method to controle powerup  reference this in that script
     public void TripleShotActive()
     {
         // tripleShotAcitve becomes true 
@@ -106,14 +106,9 @@ public class Player : MonoBehaviour
         // start the powerdonw conroutine for triple shot
         StartCoroutine(TripleShotPowerDownRoutine());
     }
-    // IEnumerator TripleShotPowerDownRoutine
-    // wait 5 seconds 
-    // set the triple shot to false
       IEnumerator TripleShotPowerDownRoutine()
     {
-
-        yield return new WaitForSeconds(5.0f);
+                yield return new WaitForSeconds(5.0f);
         _isTripleShotActive = false;
-
-    }
+     }
 }
