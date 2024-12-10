@@ -26,9 +26,7 @@ public class SpawnManager : MonoBehaviour
  IEnumerator SpawnEnemyRoutine()
     {
         // in while loop only loop if player is alive
-
-         //   while (true)
-            while (_stopSpawning == false)
+           while (_stopSpawning == false)
         {
        //var to randsomize position of _enemyPrefab 
            Vector3 posToSpawn = new Vector3(Random.Range(-8f, 8f), 7f, 0);
@@ -40,9 +38,16 @@ public class SpawnManager : MonoBehaviour
             }
    
     }
-    IEnumerator SpawnPowerupRoutine() { 
-    // every 3-7 seconds spawn in a power up 
-    };    
+    IEnumerator SpawnPowerupRoutine() {
+        // every 3-7 seconds spawn in a power up 
+        while (1==2)
+        {
+            Vector3 posToSpawn = new Vector3(Random.Range(-8f, 8f), 7f, 0);
+            GameObject newPowerUp = Instantiate(_powerUpPrefab, posToSpawn, Quaternion.identity);
+            newPowerUp.transform.parent = _powerUpCpntainer.tranform;
+            yeild return new WaitForSeconds(5.0f);
+        }
+    }    
 
     public void onPlayerDeath()
     {
