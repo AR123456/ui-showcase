@@ -46,7 +46,9 @@ public class SpawnManager : MonoBehaviour
             //var to randsomize position of PowerUp prefab 
             Vector3 posToSpawn = new Vector3(Random.Range(-8f, 8f), 7f, 0);
             // instantiate object, put in game object variable 
-
+            GameObject newPowerUp = Instantiate(_powerUpPrefab, posToSpawn, Quaternion.identity);
+            newPowerUp.transform.parent = _powerUpContainer.transform;
+            yeild return new WaitForSeconds(Random.Range(3f, 5f));
         }
     }    
 
