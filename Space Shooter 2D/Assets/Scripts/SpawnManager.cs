@@ -9,12 +9,15 @@ public class SpawnManager : MonoBehaviour
     private GameObject _enemyPrefab;
     [SerializeField]
     private GameObject _enemyContainer;
+    [SerializeField]
+    private GameObject _tripleShotPowerupPrefab;
     private bool _stopSpawning = false;
 
         // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawnEnemyRoutine());
+        StartCoroutine(SpawnPowerupRoutine());
     }
         // Update is called once per frame
     void Update()
@@ -43,12 +46,12 @@ public class SpawnManager : MonoBehaviour
         // in while loop only loop if player is alive
         while (_stopSpawning == false)
         {
-            //var to randsomize position of PowerUp prefab 
+            // define random postion to spawnto
             Vector3 posToSpawn = new Vector3(Random.Range(-8f, 8f), 7f, 0);
-            // instantiate object, put in game object variable 
-            GameObject newPowerUp = Instantiate(_powerUpPrefab, posToSpawn, Quaternion.identity);
-            newPowerUp.transform.parent = _powerUpContainer.transform;
-            yeild return new WaitForSeconds(Random.Range(3f, 5f));
+            // spawn in the powerup - do not need container becasue we are not re using enemys 
+            // use variable ref to object to insansiate 
+            Instantiate(_tripleShotPowerupPrefab, posToSpawn, Quaternion.identity);
+            yield return new WaitForSeconds(Random.Range(3, 8));
         }
     }    
 
