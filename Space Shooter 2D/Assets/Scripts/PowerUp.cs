@@ -6,6 +6,9 @@ public class PowerUp : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 3.0f;
+    // need to identify which power up 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +36,8 @@ public class PowerUp : MonoBehaviour
             Player player = other.transform.GetComponent<Player>();
             if (player !=null)
             {
-                // communicate with the player script using other
+                // in the communication to the player need to not hard code to the triple shot but look to what powerup contacted the player
+                // which power up am I representing when spawned 
                 player.TripleShotActive();          
                      }
             // destroy the power up 
