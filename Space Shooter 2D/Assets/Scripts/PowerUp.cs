@@ -53,6 +53,7 @@ public class PowerUp : MonoBehaviour
                         Debug.Log("sheilds");
                         break;
                     default:
+                        Debug.Log("This is the default case")
                         break;
                 }
 
