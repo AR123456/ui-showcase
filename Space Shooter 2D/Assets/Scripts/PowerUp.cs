@@ -6,7 +6,8 @@ public class PowerUp : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 3.0f;
-    // need to identify which power up 
+    // need to identify which power up using intiger system- give ids
+    //ID for Powerups 0=tripleshot, 1=speed,2=Shields
 
 
     // Start is called before the first frame update
@@ -36,7 +37,8 @@ public class PowerUp : MonoBehaviour
             Player player = other.transform.GetComponent<Player>();
             if (player !=null)
             {
-                // in the communication to the player need to not hard code to the triple shot but look to what powerup contacted the player
+                // in the communication to the player need to not hard code to the triple shot
+                // but look to what powerup contacted the player
                 // which power up am I representing when spawned 
                 player.TripleShotActive();          
                      }
