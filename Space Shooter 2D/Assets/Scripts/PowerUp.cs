@@ -8,7 +8,9 @@ public class PowerUp : MonoBehaviour
     private float _speed = 3.0f;
     // need to identify which power up using intiger system- give ids
     //ID for Powerups 0=tripleshot, 1=speed,2=Shields
-
+    [SerializeField]
+    // initializing to set in inspector - will be avalible in prefabs
+    private int powerupID;
 
     // Start is called before the first frame update
     void Start()
