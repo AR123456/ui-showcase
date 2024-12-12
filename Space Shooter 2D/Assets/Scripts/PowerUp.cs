@@ -47,13 +47,13 @@ public class PowerUp : MonoBehaviour
                         player.TripleShotActive();
                             break;
                     case 1:
-                        Debug.Log("speed ");
+                        player.PowerSpeedActive();
                         break;
                     case 2:
                         Debug.Log("sheilds");
                         break;
                     default:
-                        Debug.Log("This is the default case")
+                        Debug.Log("This is the default case");
                         break;
                 }
 

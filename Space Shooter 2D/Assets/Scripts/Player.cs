@@ -123,15 +123,15 @@ public class Player : MonoBehaviour
         _isTripleShotActive = false;
      }
     // method to control speed powerup, reference this in powerup script 
-    public void powerSpeedActive()
+    public void PowerSpeedActive()
     {
-        _isPowerupActive == true;
+        _isPowerupActive = true;
         StartCoroutine(PowerSpeedPowerDownRoutine());
     }
     // method to handle speed powerdown, make it inactive 
     IEnumerator PowerSpeedPowerDownRoutine()
     {
-        yeild return new WaitForSeconds(5.0f);
-        _isPowerupActive == false;
+        yield return new WaitForSeconds(8.5f);
+        _isPowerupActive = false;
     }
 }
