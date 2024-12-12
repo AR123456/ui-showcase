@@ -41,21 +41,20 @@ public class PowerUp : MonoBehaviour
             {
                 // in the communication to the player need to not hard code to the triple shot
                 //ID for Powerups 0=tripleshot, 1=speed,2=Shields
-                //if powerup is 0 
-                if (powerupID==0)
+               
+                if (powerupID == 0)
                 {
                     player.TripleShotActive();
                 }
-                else if (powerupID==1)
+                else if (powerupID == 1)
                 {
                     Debug.Log("In speed powerup ");
                 }
-                 else if(powerupID==2)
+                 else if(powerupID == 2)
                 {
                     Debug.Log("in sheilds powerup ");
                 }
-                // else if 1 - play speed powerup
-                // else if 2 play sheilds powerup
+          
                      }
             // destroy the power up 
             Destroy(this.gameObject);
