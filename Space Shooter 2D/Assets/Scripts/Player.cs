@@ -26,7 +26,10 @@ public class Player : MonoBehaviour
     // for testing triple shot serialize
     [SerializeField]
     private bool _isTripleShotActive = false;
-
+        [SerializeField]
+    private bool _isPowerupActive = false;
+    [SerializeField]
+    private float _powerSpeed = 8.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,10 +74,18 @@ public class Player : MonoBehaviour
         //local vars = to the keyboard input
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
+
         // creating new Vector
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
         // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
-        transform.Translate(direction * _speed * Time.deltaTime);
+        if(_isPowerupActive == true) {
+            transform.Translate(direction * _powerSpeed * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(direction * _speed * Time.deltaTime);
+        }
+        
         // using clamp for y 
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.8f, 0), 0);
         // x stop on let at -11 , on R if 11 reached reset postion to -11
@@ -111,4 +122,16 @@ public class Player : MonoBehaviour
                 yield return new WaitForSeconds(5.0f);
         _isTripleShotActive = false;
      }
+    // method to control speed powerup, reference this in powerup script 
+    public void powerSpeedActive()
+    {
+        _isPowerupActive == true;
+        StartCoroutine(PowerSpeedPowerDownRoutine());
+    }
+    // method to handle speed powerdown, make it inactive 
+    IEnumerator PowerSpeedPowerDownRoutine()
+    {
+        yeild return new WaitForSeconds(5.0f);
+        _isPowerupActive == false;
+    }
 }
