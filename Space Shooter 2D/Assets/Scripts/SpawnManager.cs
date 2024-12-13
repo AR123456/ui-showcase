@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    // variable to store the object we want to spawn in the Instantiate method in the IEnumerator
+    // var to store object to spawn in the Instantiate method in the IEnumerator
     [SerializeField]
     private GameObject _enemyPrefab;
     [SerializeField]
@@ -12,18 +12,17 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject _tripleShotPowerupPrefab;
     private bool _stopSpawning = false;
+    // create game object and private bool for  _speedPowerupPrefab
 
         // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawnEnemyRoutine());
         StartCoroutine(SpawnPowerupRoutine());
+         
     }
         // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Update(){ }
     // spawn game objects every 5 seconds (coroutine)
     // create a coroutine of type IEnumerator 
  IEnumerator SpawnEnemyRoutine()
@@ -41,6 +40,7 @@ public class SpawnManager : MonoBehaviour
             }
    
     }
+   // re write this to add a condition for speed power up  how about a switch case
     IEnumerator SpawnPowerupRoutine() {
         // every 3-7 seconds spawn in a power up 
         // in while loop only loop if player is alive
@@ -54,6 +54,7 @@ public class SpawnManager : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(3, 8));
         }
     }    
+    
 
     public void onPlayerDeath()
     {
