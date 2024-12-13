@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _speed = 3.5f;
     [SerializeField]
+    private float _speedMultiplier = 2;
+    [SerializeField]
     private GameObject _laserPrefab;
     // game object to store power up
    [SerializeField]
@@ -23,13 +25,9 @@ public class Player : MonoBehaviour
     private int _lives = 3;
     // communicate with Spawn Manager
     private SpawnManager _spawnManager;
-    // for testing triple shot serialize
-    [SerializeField]
     private bool _isTripleShotActive = false;
-        [SerializeField]
-    private bool _isPowerupActive = false;
-    [SerializeField]
-    private float _powerSpeed = 8.5f;
+    private bool _isSpeedBoostActive = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,12 +76,12 @@ public class Player : MonoBehaviour
         // creating new Vector
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
         // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
-        if(_isPowerupActive == true) {
-            transform.Translate(direction * _powerSpeed * Time.deltaTime);
+        if(_isSpeedBoostActive == false) {
+            transform.Translate(direction * _speed * Time.deltaTime);
         }
         else
         {
-            transform.Translate(direction * _speed * Time.deltaTime);
+            transform.Translate(direction * _speed *_speedMultiplier * Time.deltaTime);
         }
         
         // using clamp for y 
@@ -125,13 +123,13 @@ public class Player : MonoBehaviour
     // method to control speed powerup, reference this in powerup script 
     public void PowerSpeedActive()
     {
-        _isPowerupActive = true;
+        _isSpeedBoostActive = true;
         StartCoroutine(PowerSpeedPowerDownRoutine());
     }
     // method to handle speed powerdown, make it inactive 
     IEnumerator PowerSpeedPowerDownRoutine()
     {
         yield return new WaitForSeconds(8.5f);
-        _isPowerupActive = false;
+        _isSpeedBoostActive = false;
     }
 }
