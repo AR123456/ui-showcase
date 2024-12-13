@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     // communicate with Spawn Manager
     private SpawnManager _spawnManager;
     private bool _isTripleShotActive = false;
+    [SerializeField]
     private bool _isSpeedBoostActive = false;
 
     // Start is called before the first frame update
@@ -72,18 +73,10 @@ public class Player : MonoBehaviour
         //local vars = to the keyboard input
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-
-        // creating new Vector
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
         // transform.Translate(new Vector3(1, 0, 0) * 5 * real time);
-        if(_isSpeedBoostActive == false) {
-            transform.Translate(direction * _speed * Time.deltaTime);
-        }
-        else
-        {
-            transform.Translate(direction * _speed *_speedMultiplier * Time.deltaTime);
-        }
-        
+         transform.Translate(direction * _speed * Time.deltaTime);
+                 
         // using clamp for y 
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.8f, 0), 0);
         // x stop on let at -11 , on R if 11 reached reset postion to -11
@@ -124,6 +117,8 @@ public class Player : MonoBehaviour
     public void SpeedBoostActive()
     {
         _isSpeedBoostActive = true;
+        // reset speed to -speed * _speedMultiplier
+        _speed *= _speedMultiplier;
         StartCoroutine(SpeedBoostPowerDownRoutine());
     }
     // method to handle speed powerdown, make it inactive 
@@ -131,5 +126,7 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(5.0f);
         _isSpeedBoostActive = false;
+        // put speed back to its original pre powerup level
+        _speed /= _speedMultiplier;
     }
 }
