@@ -10,9 +10,10 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject _enemyContainer;
     [SerializeField]
-    private GameObject _tripleShotPowerupPrefab;
+    // make this the powerup array- 
+    private GameObject[] powerups;
     private bool _stopSpawning = false;
-    // create game object and private bool for  _speedPowerupPrefab
+ 
 
         // Start is called before the first frame update
     void Start()
@@ -40,7 +41,7 @@ public class SpawnManager : MonoBehaviour
             }
    
     }
-   // re write this to add a condition for speed power up  how about a switch case
+  
     IEnumerator SpawnPowerupRoutine() {
         // every 3-7 seconds spawn in a power up 
         // in while loop only loop if player is alive
@@ -49,8 +50,8 @@ public class SpawnManager : MonoBehaviour
             // define random postion to spawnto
             Vector3 posToSpawn = new Vector3(Random.Range(-8f, 8f), 7f, 0);
             // spawn in the powerup - do not need container becasue we are not re using enemys 
-            // use variable ref to object to insansiate 
-            Instantiate(_tripleShotPowerupPrefab, posToSpawn, Quaternion.identity);
+            // use variable ref to object to insansiate , use the powerup ID 
+           // Instantiate(_tripleShotPowerupPrefab, posToSpawn, Quaternion.identity);
             yield return new WaitForSeconds(Random.Range(3, 8));
         }
     }    
