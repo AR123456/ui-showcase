@@ -39,8 +39,7 @@ public class PowerUp : MonoBehaviour
             Player player = other.transform.GetComponent<Player>();
             if (player !=null)
             {
-                // in the communication to the player need to not hard code to the triple shot
-                //ID for Powerups 0=tripleshot, 1=speed,2=Shields
+              //ID for Powerups 0=tripleshot, 1=speed,2=Shields
                 switch (powerupID)
                 {
                     case 0:
