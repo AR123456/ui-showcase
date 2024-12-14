@@ -47,11 +47,11 @@ public class SpawnManager : MonoBehaviour
         // in while loop only loop if player is alive
         while (_stopSpawning == false)
         {
-            // define random postion to spawnto
+            // define random postion to spawn to
             Vector3 posToSpawn = new Vector3(Random.Range(-8f, 8f), 7f, 0);
-            // spawn in the powerup - do not need container becasue we are not re using enemys 
-            // use variable ref to object to insansiate , use the powerup ID 
-           // Instantiate(_tripleShotPowerupPrefab, posToSpawn, Quaternion.identity);
+            // define random power up to past to the instatiate from powerup array
+            int randomPowerUp = Random.Range(0, 2);
+            Instantiate(powerups[randomPowerUp], posToSpawn, Quaternion.identity);
             yield return new WaitForSeconds(Random.Range(3, 8));
         }
     }    
