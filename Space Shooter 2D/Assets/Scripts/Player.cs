@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     private bool _isTripleShotActive = false;
     [SerializeField]
     private bool _isSpeedBoostActive = false;
+    // bool for sheild
 
     // Start is called before the first frame update
     void Start()
@@ -129,4 +130,7 @@ public class Player : MonoBehaviour
         // put speed back to its original pre powerup level
         _speed /= _speedMultiplier;
     }
+
+    // Sheild acitve script to set to true and start coroutine, 
+    // IEnumbertor for sheild power down 
 }
