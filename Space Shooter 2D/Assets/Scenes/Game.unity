@@ -192,6 +192,7 @@ MonoBehaviour:
   _canFire: -1
   _lives: 3
   _isSpeedBoostActive: 0
+  _isShieldActive: 0
 --- !u!212 &309606809
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -601,8 +602,8 @@ GameObject:
   - component: {fileID: 1628311568}
   - component: {fileID: 1628311571}
   - component: {fileID: 1628311570}
-  - component: {fileID: 1628311572}
   - component: {fileID: 1628311573}
+  - component: {fileID: 1628311572}
   m_Layer: 0
   m_Name: Shield_Powerup
   m_TagString: Untagged
@@ -730,9 +731,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1628311567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0f8ca40e56ba6149a6f1f87e56fca23, type: 3}
+  m_Script: {fileID: 11500000, guid: 7468fad8d2f934b45ab234a098e342c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 3
+  powerupID: 0
 --- !u!95 &1628311573
 Animator:
   serializedVersion: 3
