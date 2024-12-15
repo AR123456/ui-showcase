@@ -28,7 +28,8 @@ public class Player : MonoBehaviour
     private bool _isTripleShotActive = false;
     [SerializeField]
     private bool _isSpeedBoostActive = false;
-    // bool for sheild
+    [SerializeField]
+    private bool _isShieldActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -132,5 +133,15 @@ public class Player : MonoBehaviour
     }
 
     // Sheild acitve script to set to true and start coroutine, 
-    // IEnumbertor for sheild power down 
+    public void SheildActive()
+    {
+        _isShieldActive = true;
+        StartCoroutine(ShieldPwerDownRoutine());
+    }
+    IEnumerator ShieldPwerDownRoutine()
+    {
+        yield return new WaitForSeconds(5.0f);
+        _isShieldActive = false;
+    }
+
 }
