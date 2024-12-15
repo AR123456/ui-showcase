@@ -49,7 +49,7 @@ public class PowerUp : MonoBehaviour
                         player.SpeedBoostActive();
                         break;
                     case 2:
-                        Debug.Log("sheilds");
+                        player.SheildActive();
                         break;
                     default:
                         Debug.Log("This is the default case");
