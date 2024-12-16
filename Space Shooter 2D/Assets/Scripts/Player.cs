@@ -93,7 +93,17 @@ public class Player : MonoBehaviour
     }
     public void Damage()
     {
+        // if sheilds is active no damage no life lost
+        if (_isShieldActive == true)
+        {
+            _isShieldActive = false;
+            return;
+        }
+        // deactivate shield 
+        // return 
+
         // define the damage trait - here we take damage, thus removing live
+
         _lives--;
       if (_lives < 1)
         {
@@ -136,12 +146,12 @@ public class Player : MonoBehaviour
     public void SheildActive()
     {
         _isShieldActive = true;
-        StartCoroutine(ShieldPwerDownRoutine());
+    //    StartCoroutine(ShieldPwerDownRoutine());
     }
-    IEnumerator ShieldPwerDownRoutine()
-    {
-        yield return new WaitForSeconds(5.0f);
-        _isShieldActive = false;
-    }
+   // IEnumerator ShieldPwerDownRoutine()
+ //   {
+//        yield return new WaitForSeconds(5.0f);
+//        _isShieldActive = false;
+ //   }
 
 }
