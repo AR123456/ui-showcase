@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     private bool _isSpeedBoostActive = false;
     [SerializeField]
     private bool _isShieldActive = false;
+    // var ref to sheild visualizer
 
     // Start is called before the first frame update
     void Start()
@@ -97,6 +98,7 @@ public class Player : MonoBehaviour
         if (_isShieldActive == true)
         {
             _isShieldActive = false;
+            // turn off the sheilds visualizer 
             return;
         }
       // define the damage trait - here we take damage, thus removing live
@@ -143,6 +145,7 @@ public class Player : MonoBehaviour
     public void SheildActive()
     {
         _isShieldActive = true;
+        // enable the visualizer 
      }
  
 
