@@ -99,10 +99,7 @@ public class Player : MonoBehaviour
             _isShieldActive = false;
             return;
         }
-        // deactivate shield 
-        // return 
-
-        // define the damage trait - here we take damage, thus removing live
+      // define the damage trait - here we take damage, thus removing live
 
         _lives--;
       if (_lives < 1)
@@ -146,12 +143,7 @@ public class Player : MonoBehaviour
     public void SheildActive()
     {
         _isShieldActive = true;
-    //    StartCoroutine(ShieldPwerDownRoutine());
-    }
-   // IEnumerator ShieldPwerDownRoutine()
- //   {
-//        yield return new WaitForSeconds(5.0f);
-//        _isShieldActive = false;
- //   }
+     }
+ 
 
 }
