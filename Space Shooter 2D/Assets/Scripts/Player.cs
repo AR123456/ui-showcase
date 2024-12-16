@@ -26,11 +26,11 @@ public class Player : MonoBehaviour
     // communicate with Spawn Manager
     private SpawnManager _spawnManager;
     private bool _isTripleShotActive = false;
-    [SerializeField]
     private bool _isSpeedBoostActive = false;
-    [SerializeField]
     private bool _isShieldActive = false;
-    // var ref to sheild visualizer
+    [SerializeField]
+    private GameObject shieldVisualizer;
+   
 
     // Start is called before the first frame update
     void Start()
