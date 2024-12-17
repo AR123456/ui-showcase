@@ -30,8 +30,6 @@ public class Player : MonoBehaviour
     private bool _isShieldActive = false;
     [SerializeField]
     private GameObject _shieldVisualizer;
-    [SerializeField]
-    private int _score;
    
 
     // Start is called before the first frame update
@@ -151,8 +149,6 @@ public class Player : MonoBehaviour
         // enable the visualizer 
         _shieldVisualizer.SetActive(true);
      }
-    // method to add 10 to score
-    // communicate to UIManager to update score
  
 
 }

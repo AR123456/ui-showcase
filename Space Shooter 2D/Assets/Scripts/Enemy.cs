@@ -50,7 +50,6 @@ public class Enemy : MonoBehaviour
             //  Debug.Log("Laser collision ");
             // Destory laser
             Destroy(other.gameObject);
-            // access player data (call players method for adding score)  and add 10 to score
             // Destroy enemy
             Destroy(this.gameObject);
         }
