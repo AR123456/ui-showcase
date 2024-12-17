@@ -29,7 +29,9 @@ public class Player : MonoBehaviour
     private bool _isSpeedBoostActive = false;
     private bool _isShieldActive = false;
     [SerializeField]
-    private GameObject shieldVisualizer;
+    private GameObject _shieldVisualizer;
+    [SerializeField]
+    private int _score;
    
 
     // Start is called before the first frame update
@@ -99,6 +101,7 @@ public class Player : MonoBehaviour
         {
             _isShieldActive = false;
             // turn off the sheilds visualizer 
+            _shieldVisualizer.SetActive(false);
             return;
         }
       // define the damage trait - here we take damage, thus removing live
@@ -146,7 +149,10 @@ public class Player : MonoBehaviour
     {
         _isShieldActive = true;
         // enable the visualizer 
+        _shieldVisualizer.SetActive(true);
      }
+    // method to add 10 to score
+    // communicate to UIManager to update score
  
 
 }
