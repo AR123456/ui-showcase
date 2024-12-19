@@ -51,6 +51,9 @@ public class Enemy : MonoBehaviour
             // Destory laser
             Destroy(other.gameObject);
             // access player data (call players method for adding score)  and add 10 to score
+            Player player = other.transform.GetComponent<Player>();
+            player._score +=10;
+            player._scoreText.text = _score;
             // Destroy enemy
             Destroy(this.gameObject);
         }

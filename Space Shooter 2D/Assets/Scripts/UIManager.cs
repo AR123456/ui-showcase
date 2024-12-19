@@ -14,8 +14,8 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         // assign text componet to handle
-     
-        _scoreText = GetComponent<Text>();
+
+        _scoreText.text = "Score: " + 50; ;
     }
 
     // Update is called once per frame
