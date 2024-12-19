@@ -30,9 +30,8 @@ public class Player : MonoBehaviour
     private bool _isShieldActive = false;
     [SerializeField]
     private GameObject _shieldVisualizer;
-    [SerializeField]
+   [SerializeField]
     private int _score;
-   
 
     // Start is called before the first frame update
     void Start()
@@ -153,6 +152,11 @@ public class Player : MonoBehaviour
      }
     // method to add 10 to score
     // communicate to UIManager to update score
- 
+    public void AddScore()
+    {
+        // is it true that laser hit enemy? - leave it up to enemy.cs where the logic is call this method there
+        // add 10 and tell the UIManager to update
+        _score += 10;
+    }
 
 }

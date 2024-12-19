@@ -6,9 +6,14 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 4.0f;
+    // create reference to the player or handle to the component
+    private Player _player;
+
      // Start is called before the first frame update
     void Start()
     {
+        // this defines player one time then it gets cashed and can later be used to update score 
+        _player = GameObject.Find("Player").GetComponent<Player>();
         // define starting position of cube Y of 5.73 looks like top of screen
         transform.position = new Vector3(0, 5.75f, 0);
     }
@@ -50,10 +55,11 @@ public class Enemy : MonoBehaviour
             //  Debug.Log("Laser collision ");
             // Destory laser
             Destroy(other.gameObject);
-            // access player data (call players method for adding score)  and add 10 to score
-            Player player = other.transform.GetComponent<Player>();
-            player._score +=10;
-            player._scoreText.text = _score;
+            // call players method for adding score
+            if (_player!=null)
+            {
+                _player.AddScore();
+            }
             // Destroy enemy
             Destroy(this.gameObject);
         }
