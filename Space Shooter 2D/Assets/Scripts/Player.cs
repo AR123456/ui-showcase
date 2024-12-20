@@ -32,6 +32,9 @@ public class Player : MonoBehaviour
     private GameObject _shieldVisualizer;
    [SerializeField]
     private int _score;
+    // declare var for handle to coponent UIManger in the cashe - put it in void Start() to find it
+    [SerializeField]
+    private UIManager _uiManager;
 
     // Start is called before the first frame update
     void Start()
@@ -40,10 +43,17 @@ public class Player : MonoBehaviour
         transform.position = new Vector3(0, 0, 0);
         // getting the spawnmanager 
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
+        // find the UIManager traverse Player into canvas 
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         // have _spawnManager.onPlayerDeath now so do a null check and then can use it 
         if (_spawnManager==null)
         {
             Debug.LogError("The Spawn Manager is Null");
+        }
+        // null check for ui manager 
+        if (_uiManager==null)
+        {
+            Debug.LogError("The UI manager is null ")
         }
     }
     // Update is called once per frame (about 60 frames per second)
@@ -155,6 +165,7 @@ public class Player : MonoBehaviour
     public void AddScore(int points)
     {
         _score += points;
+        // need to update UI with score but dont use getcomponet here its too expensive
     }
 
 }
