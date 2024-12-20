@@ -150,13 +150,11 @@ public class Player : MonoBehaviour
         // enable the visualizer 
         _shieldVisualizer.SetActive(true);
      }
-    // method to add 10 to score
-    // communicate to UIManager to update score
-    public void AddScore()
+    
+    // adding a paramiter to get a point value from the enemy when enemy is shot by laser
+    public void AddScore(int points)
     {
-        // is it true that laser hit enemy? - leave it up to enemy.cs where the logic is call this method there
-        // add 10 and tell the UIManager to update
-        _score += 10;
+        _score += points;
     }
 
 }
