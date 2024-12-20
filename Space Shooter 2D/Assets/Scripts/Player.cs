@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         // null check for ui manager 
         if (_uiManager==null)
         {
-            Debug.LogError("The UI manager is null ")
+            Debug.LogError("The UI manager is null ");
         }
     }
     // Update is called once per frame (about 60 frames per second)
@@ -166,6 +166,8 @@ public class Player : MonoBehaviour
     {
         _score += points;
         // need to update UI with score but dont use getcomponet here its too expensive
+        // getting handle to UI manager out of cashe, call method from UIManger.cs
+        
     }
 
 }

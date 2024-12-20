@@ -14,13 +14,9 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         // assign text componet to handle
-        // commented this out so I did not get the nullReferenceException error 
-      //  _scoreText.text = "Score: " + 50; ;
+     // get this from the 
+      _scoreText.text = "Score: " + 0 ;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }

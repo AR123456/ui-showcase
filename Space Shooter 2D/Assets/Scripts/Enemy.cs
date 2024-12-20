@@ -58,6 +58,7 @@ public class Enemy : MonoBehaviour
             // call players method for adding score
             if (_player!=null)
             {
+                // the param being passed in is what goes to player.cs
                 _player.AddScore(10);
             }
             // Destroy enemy
