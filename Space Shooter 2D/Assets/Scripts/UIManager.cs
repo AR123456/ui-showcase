@@ -18,5 +18,10 @@ public class UIManager : MonoBehaviour
       _scoreText.text = "Score: " + 0 ;
     }
 
+    // method to call from player.cs
+    public void UpdateScore(int playerScore) {
+
+        _scoreText.text = "Score: " + playerScore.ToString();
+    }
   
 }
