@@ -161,11 +161,11 @@ public class Player : MonoBehaviour
         _shieldVisualizer.SetActive(true);
      }
     
-    // adding a paramiter to get a point value from the enemy when enemy is shot by laser
+    // paramiterpoint value from enemy when enemy shot by laser
     public void AddScore(int points)
     {
         _score += points;
-        // need to update UI with score but dont use getcomponet here its too expensive
+        //update UI with score dont use getcomponet here its too expensive
         // getting handle to UI manager out of cashe, call method from UIManger.cs
         _uiManager.UpdateScore(_score);
     }
