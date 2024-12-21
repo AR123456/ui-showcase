@@ -167,7 +167,7 @@ public class Player : MonoBehaviour
         _score += points;
         // need to update UI with score but dont use getcomponet here its too expensive
         // getting handle to UI manager out of cashe, call method from UIManger.cs
-        
+        _uiManager.UpdateScore(_score);
     }
 
 }

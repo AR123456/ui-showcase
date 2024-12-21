@@ -271,6 +271,7 @@ MonoBehaviour:
   _lives: 3
   _shieldVisualizer: {fileID: 1914698002}
   _score: 0
+  _uiManager: {fileID: 0}
 --- !u!212 &309606809
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -847,7 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64def0d67709e1d4eaafe556801a1e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreText: {fileID: 0}
+  _scoreText: {fileID: 23175651}
 --- !u!1 &1914698002
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     {
         // assign text componet to handle
      // get this from the 
-      _scoreText.text = "Score: " + 0 ;
+     // _scoreText.text = "Score: " + 0 ;
     }
 
     // method to call from player.cs
