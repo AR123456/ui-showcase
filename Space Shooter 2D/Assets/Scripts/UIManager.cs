@@ -29,5 +29,10 @@ public class UIManager : MonoBehaviour
 
         _scoreText.text = "Score: " + playerScore.ToString();
     }
-  
+    // system to update lives - call from player.cs 
+    public void UpdateLives(int currentLives)
+    {
+        _livesImg = _liveSprtes[currentLives];
+    }
+
 }

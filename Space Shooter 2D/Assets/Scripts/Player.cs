@@ -169,5 +169,9 @@ public class Player : MonoBehaviour
         // getting handle to UI manager out of cashe, call method from UIManger.cs
         _uiManager.UpdateScore(_score);
     }
+    public void HandleLives()
+    {
+        UpdateLives(_lives);
+    }
 
 }
