@@ -114,8 +114,11 @@ public class Player : MonoBehaviour
             return;
         }
       // define the damage trait - here we take damage, thus removing live
+       _lives--;
+        //change the sprite to reflect lives
+        _uiManager.UpdateLives(_lives);
 
-        _lives--;
+
       if (_lives < 1)
         {
             // tell SpawnManager.cs to stop spawning 
@@ -169,9 +172,6 @@ public class Player : MonoBehaviour
         // getting handle to UI manager out of cashe, call method from UIManger.cs
         _uiManager.UpdateScore(_score);
     }
-    public void HandleLives()
-    {
-        UpdateLives(_lives);
-    }
+
 
 }
