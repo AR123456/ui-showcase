@@ -9,6 +9,9 @@ public class UIManager : MonoBehaviour
     // a handle to text component 
    [SerializeField]
     private Text _scoreText;
+    // handle lives display game oject image componet
+    [SerializeField]
+    private Image _LivesImg;
     // handle to the lives sprites
     [SerializeField]
     private Sprite[] _liveSprites;
