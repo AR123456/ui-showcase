@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//  UnityEngine.UI so Text class is avalbile 
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    // need to update text score, need a handle to text component 
-    // be sure to add UnityEngine.UI so Text class is avalbile 
-    [SerializeField]
+    // a handle to text component 
+   [SerializeField]
     private Text _scoreText;
+    // handle to the lives sprites
+    [SerializeField]
+    private Sprite[] _liveSprites;
 
     // Start is called before the first frame update
     void Start()
