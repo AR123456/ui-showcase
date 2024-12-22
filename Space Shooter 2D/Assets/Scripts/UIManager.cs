@@ -32,7 +32,9 @@ public class UIManager : MonoBehaviour
     // system to update lives - call from player.cs 
     public void UpdateLives(int currentLives)
     {
-        _livesImg = _liveSprtes[currentLives];
+        // display img sprite based on currentlives index
+     
+        _LivesImg.sprite = _liveSprites[currentLives];
     }
 
 }
