@@ -42,7 +42,8 @@ public class UIManager : MonoBehaviour
         {
          
             _gameOverText.gameObject.SetActive(true);
-            // call a coroutine in a while loop 
+            // coroutine with the while loop
+           StartCoroutine(GameOverFlickerRoutine());
         }
     }
  
