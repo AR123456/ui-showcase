@@ -40,8 +40,7 @@ public class UIManager : MonoBehaviour
         // when calling this funtion from player js are already checking lives to add if statement to turn on game over 
         if (currentLives==0)
         {
-         
-            _gameOverText.gameObject.SetActive(true);
+                     _gameOverText.gameObject.SetActive(true);
             // coroutine with the while loop
            StartCoroutine(GameOverFlickerRoutine());
         }
