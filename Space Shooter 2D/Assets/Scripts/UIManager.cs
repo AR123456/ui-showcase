@@ -18,10 +18,7 @@ public class UIManager : MonoBehaviour
     // text component for game over 
     [SerializeField]
     private Text _gameOverText;
-    // var to hold flicker 
-    // use  Time.deltaTime  as a multiplyer to control speed of flicker 
-
-
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +40,9 @@ public class UIManager : MonoBehaviour
         // when calling this funtion from player js are already checking lives to add if statement to turn on game over 
         if (currentLives==0)
         {
+         
             _gameOverText.gameObject.SetActive(true);
+            // call a coroutine in a while loop 
         }
     }
  
