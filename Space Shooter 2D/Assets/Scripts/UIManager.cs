@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Sprite[] _liveSprites;
     // text component for game over 
+    [SerializeField]
+    private Text _gameOverText;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +35,8 @@ public class UIManager : MonoBehaviour
     public void UpdateLives(int currentLives)
     {
         // display img sprite based on currentlives index
-     
-        _LivesImg.sprite = _liveSprites[currentLives];
+             _LivesImg.sprite = _liveSprites[currentLives];
     }
-    // method call in player.cs when lives <1
+ 
+   
 }
