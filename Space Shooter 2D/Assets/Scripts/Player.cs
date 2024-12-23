@@ -123,6 +123,7 @@ public class Player : MonoBehaviour
         {
             // tell SpawnManager.cs to stop spawning 
             _spawnManager.onPlayerDeath();
+            // display game over text 
             Destroy(this.gameObject);
         }
     }
