@@ -12,11 +12,7 @@ public class PowerUp : MonoBehaviour
     // initializing to set in inspector - will be avalible in prefabs
     private int powerupID;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+ 
 
     // Update is called once per frame
     void Update()
