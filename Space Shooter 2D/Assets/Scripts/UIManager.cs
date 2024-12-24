@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour
         _scoreText.text = "Score: " + 0 ;
         // at start of game no game over text
         _gameOverText.gameObject.SetActive(false);
+        // set restart to false
+        _rToRestartText.gameObject.SetActive(false);
     }
 
     // method to call from player.cs
@@ -56,6 +58,7 @@ public class UIManager : MonoBehaviour
         //show  _rToRestartText and do the while loop 
         while (true)
         {
+            _rToRestartText.text= "Press the 'R' key to restart the level";
             _gameOverText.text = "Game Over";
             yield return new WaitForSeconds(0.5f);
             _gameOverText.text = "";
