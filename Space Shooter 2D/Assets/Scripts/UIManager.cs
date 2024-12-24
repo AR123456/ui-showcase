@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     // text component for game over 
     [SerializeField]
     private Text _gameOverText;
+    [SerializeField]
+    private Text _rToRestartText;
   
     // Start is called before the first frame update
     void Start()
@@ -39,7 +41,8 @@ public class UIManager : MonoBehaviour
              _LivesImg.sprite = _liveSprites[currentLives];
        if (currentLives==0)
         {
-                     _gameOverText.gameObject.SetActive(true);
+
+           _gameOverText.gameObject.SetActive(true);
             // coroutine with the while loop
            StartCoroutine(GameOverFlickerRoutine());
         }
@@ -47,6 +50,10 @@ public class UIManager : MonoBehaviour
  
    IEnumerator GameOverFlickerRoutine()
     {
+        // if  Input.GetKeyDown(KeyCode.R)  - restart game else 
+       
+        
+        //show  _rToRestartText and do the while loop 
         while (true)
         {
             _gameOverText.text = "Game Over";
