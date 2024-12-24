@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
      // Start is called before the first frame update
     void Start()
     {
-        // this defines player one time then it gets cashed and can later be used to update score 
+        //defines player one time then it is cashed and can later be used to update score 
         _player = GameObject.Find("Player").GetComponent<Player>();
         // define starting position of cube Y of 5.73 looks like top of screen
         transform.position = new Vector3(0, 5.75f, 0);
@@ -37,8 +37,8 @@ public class Enemy : MonoBehaviour
         //  damage Player (lives system) and then Destroy us (enemy) 
         if (other.tag=="Player")
         {  
-           // damage player sart with 3, decrement with each hit from laser 
-           // set this variable in the Player script - use GetComponent to call it from here
+           // damage player start at 3, decrement with each hit from laser 
+           // set var in Player.cs use GetComponent to call it from here
            Player player = other.transform.GetComponent<Player>();
             // check for null first
             if (player != null)
@@ -48,8 +48,7 @@ public class Enemy : MonoBehaviour
             // destory enemy
             Destroy(this.gameObject);
             }
-        // if other is laser
-        // Destroy Laser and then distroy us (enemy)
+          // if other tag is laser Destroy Laser then distroy us(enemy)
         if (other.tag =="Laser")
         {
             //  Debug.Log("Laser collision ");
@@ -58,7 +57,7 @@ public class Enemy : MonoBehaviour
             // call players method for adding score
             if (_player!=null)
             {
-                // the param being passed in is what goes to player.cs
+                // the param passed in goes to player.cs
                 _player.AddScore(10);
             }
             // Destroy enemy

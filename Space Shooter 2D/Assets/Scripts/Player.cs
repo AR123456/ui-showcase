@@ -113,12 +113,10 @@ public class Player : MonoBehaviour
             _shieldVisualizer.SetActive(false);
             return;
         }
-      // define the damage trait - here we take damage, thus removing live
+      // damage trait here take damage, removing live
        _lives--;
         //change the sprite to reflect lives
         _uiManager.UpdateLives(_lives);
-
-
       if (_lives < 1)
         {
             // tell SpawnManager.cs to stop spawning 
@@ -126,7 +124,7 @@ public class Player : MonoBehaviour
              Destroy(this.gameObject);
         }
     }
-    // method to controle powerup  reference this in that script
+    // method to control powerup reference this in that script
     public void TripleShotActive()
     {
         // tripleShotAcitve becomes true 

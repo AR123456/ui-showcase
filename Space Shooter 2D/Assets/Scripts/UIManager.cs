@@ -37,8 +37,7 @@ public class UIManager : MonoBehaviour
     {
         // display img sprite based on currentlives index
              _LivesImg.sprite = _liveSprites[currentLives];
-        // when calling this funtion from player js are already checking lives to add if statement to turn on game over 
-        if (currentLives==0)
+       if (currentLives==0)
         {
                      _gameOverText.gameObject.SetActive(true);
             // coroutine with the while loop
