@@ -49,16 +49,19 @@ public class UIManager : MonoBehaviour
     void GameOverSequence()
     {
         _gameOverText.gameObject.SetActive(true);
-        // activate the restart text 
-        _rToRestartText.gameObject.SetActive(true);
         // coroutine with the while loop
         StartCoroutine(GameOverFlickerRoutine());
     }
    IEnumerator GameOverFlickerRoutine()
     {
+        // if  Input.GetKeyDown(KeyCode.R)  - restart game else 
+       
+        
+        //show  _rToRestartText and do the while loop 
         while (true)
         {
-           _gameOverText.text = "Game Over";
+         
+            _gameOverText.text = "Game Over";
             yield return new WaitForSeconds(0.5f);
             _gameOverText.text = "";
             yield return new WaitForSeconds(0.5f);
