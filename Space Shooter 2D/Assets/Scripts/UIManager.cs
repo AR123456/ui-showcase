@@ -27,8 +27,7 @@ public class UIManager : MonoBehaviour
         _scoreText.text = "Score: " + 0 ;
         // at start of game no game over text
         _gameOverText.gameObject.SetActive(false);
-        // set restart to false
-       // _rToRestartText.gameObject.SetActive(false);
+       
     }
 
     // method to call from player.cs
@@ -43,13 +42,16 @@ public class UIManager : MonoBehaviour
              _LivesImg.sprite = _liveSprites[currentLives];
        if (currentLives==0)
         {
-
-           _gameOverText.gameObject.SetActive(true);
-            // coroutine with the while loop
-           StartCoroutine(GameOverFlickerRoutine());
+            GameOverSequence();
         }
     }
- 
+    // giving management of game over its own method 
+    void GameOverSequence()
+    {
+        _gameOverText.gameObject.SetActive(true);
+        // coroutine with the while loop
+        StartCoroutine(GameOverFlickerRoutine());
+    }
    IEnumerator GameOverFlickerRoutine()
     {
         // if  Input.GetKeyDown(KeyCode.R)  - restart game else 
