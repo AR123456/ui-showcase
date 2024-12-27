@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
     // by default isGameOver is false
     [SerializeField]
     private bool _isGameOver;
+    private void Update()
+    {
+        
+    }
     // method to call the game over method of the game manager 
     public void GameOver()
     {
