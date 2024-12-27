@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // by default isGameOver is false
+    [SerializeField]
+    private bool _isGameOver;
+    // method to call the game over method of the game manager 
+    public void GameOver()
     {
-        
+        // set is game over to true 
+        _isGameOver = true;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // user input functionality happens here - void update method for user input 
 }
