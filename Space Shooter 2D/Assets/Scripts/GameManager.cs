@@ -18,10 +18,11 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(0);// index O is "Game"
         }
      }
-    // method to call the game over method of the game manager 
+    // method to call game over from the UIManager script GameOverSequennce
     public void GameOver()
     {
         // set is game over to true 
+        //Debug.Log("GameManager::GameOver() called");
         _isGameOver = true;
     }
 }

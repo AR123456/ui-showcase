@@ -20,6 +20,9 @@ public class UIManager : MonoBehaviour
     private Text _gameOverText;
     [SerializeField]
     private Text _rToRestartText;
+    // ref to GameManager so GameOver() works
+    [SerializeField]
+    private GameManager _gameManager;
   
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,8 @@ public class UIManager : MonoBehaviour
         _scoreText.text = "Score: " + 0 ;
         // at start of game no game over text
         _gameOverText.gameObject.SetActive(false);
+        // assign the handle to component 
+        _gameManager=GameObject.Find("Game_Manager").GetComponent<GameManager>();
        
     }
 
