@@ -32,6 +32,11 @@ public class UIManager : MonoBehaviour
         _gameOverText.gameObject.SetActive(false);
         // assign the handle to component 
         _gameManager=GameObject.Find("Game_Manager").GetComponent<GameManager>();
+        // null check 
+        if (_gameManager == null)
+        {
+            Debug.LogError("GameManager is Null");
+        }
        
     }
 
@@ -52,7 +57,9 @@ public class UIManager : MonoBehaviour
     }
     // giving management of game over its own method 
     void GameOverSequence()
+
     {
+        _gameManager.GameOver();
         _gameOverText.gameObject.SetActive(true);
         // activate the restart text 
         _rToRestartText.gameObject.SetActive(true);
