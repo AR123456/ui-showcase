@@ -4,7 +4,6 @@ using UnityEngine;
 // need this namespace for the scenemanager
 using UnityEngine.SceneManagement;
 
-
 public class GameManager : MonoBehaviour
 {
     // by default isGameOver is false
@@ -14,15 +13,14 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && _isGameOver==true)
         {
-            // takes in int which is the scene load index or scene name
+            // can be scene index or scene name
             SceneManager.LoadScene(0);// index O is "Game"
         }
      }
-    // method to call game over from the UIManager script GameOverSequennce
+    // method to call game over from the UIManager.cs  GameOverSequennce
     public void GameOver()
     {
         // set is game over to true 
-        //Debug.Log("GameManager::GameOver() called");
-        _isGameOver = true;
+         _isGameOver = true;
     }
 }

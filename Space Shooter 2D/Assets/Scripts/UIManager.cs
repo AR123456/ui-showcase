@@ -21,7 +21,6 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text _rToRestartText;
     // ref to GameManager so GameOver() works
-    [SerializeField]
     private GameManager _gameManager;
   
     // Start is called before the first frame update
@@ -57,8 +56,7 @@ public class UIManager : MonoBehaviour
     }
     // giving management of game over its own method 
     void GameOverSequence()
-
-    {
+     {
         _gameManager.GameOver();
         _gameOverText.gameObject.SetActive(true);
         // activate the restart text 
