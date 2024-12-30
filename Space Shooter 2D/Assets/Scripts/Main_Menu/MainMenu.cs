@@ -5,5 +5,7 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
  // method to call with button click 
- public void LoadGame() { }
+ public void LoadGame() {
+    // load game scene - build settings 
+    }
 }
