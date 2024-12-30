@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
- // method to call with button click 
- public void LoadGame() { }
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }
