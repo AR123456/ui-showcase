@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && _isGameOver==true)
         {
             // can be scene index or scene name
-            SceneManager.LoadScene(0);// index O is "Game"
+            SceneManager.LoadScene(1);// index 1 is "Game"
         }
      }
     // method to call game over from the UIManager.cs  GameOverSequennce
