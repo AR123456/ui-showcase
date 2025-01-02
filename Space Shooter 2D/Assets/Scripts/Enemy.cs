@@ -6,14 +6,18 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 4.0f;
-    // create reference to the player or handle to the component
+    // ref/handle to player component
     private Player _player;
+    // ref/andle to enemys animator component
 
      // Start is called before the first frame update
     void Start()
     {
-        //defines player one time then it is cashed and can later be used to update score 
+        //define player cashed later used to update score 
         _player = GameObject.Find("Player").GetComponent<Player>();
+        // do a null check on player
+        // assign enemy animator component
+
         // define starting position of cube Y of 5.73 looks like top of screen
         transform.position = new Vector3(0, 5.75f, 0);
     }
@@ -45,6 +49,7 @@ public class Enemy : MonoBehaviour
             {
             player.Damage();
             }
+            // trigger explosion animation 
             // destory enemy
             Destroy(this.gameObject);
             }
@@ -60,6 +65,7 @@ public class Enemy : MonoBehaviour
                 // the param passed in goes to player.cs
                 _player.AddScore(10);
             }
+            // trigger explosion animation
             // Destroy enemy
             Destroy(this.gameObject);
         }
