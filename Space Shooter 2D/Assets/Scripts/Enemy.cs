@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     // ref/handle to player component
     private Player _player;
     // ref/andle to enemys animator component
+    private Animator _anim;
 
      // Start is called before the first frame update
     void Start()
@@ -16,7 +17,17 @@ public class Enemy : MonoBehaviour
         //define player cashed later used to update score 
         _player = GameObject.Find("Player").GetComponent<Player>();
         // do a null check on player
+        if (_player ==null)
+        {
+            Debug.LogError("The Player is Null");
+        }
         // assign enemy animator component
+        _anim = GetComponent<Animator>();
+        // null check as best practice
+        if (_anim==null)
+        {
+            Debug.LogError("The animator is Null");
+        }
 
         // define starting position of cube Y of 5.73 looks like top of screen
         transform.position = new Vector3(0, 5.75f, 0);
@@ -49,9 +60,10 @@ public class Enemy : MonoBehaviour
             {
             player.Damage();
             }
-            // trigger explosion animation 
-            // destory enemy
-            Destroy(this.gameObject);
+            // trigger explosion animation - pass in its name 
+            _anim.SetTrigger("OnEnemyDeath");
+            //Destroy enemy but give the animation a sec to play first
+            Destroy(this.gameObject,2.8f);
             }
           // if other tag is laser Destroy Laser then distroy us(enemy)
         if (other.tag =="Laser")
@@ -65,9 +77,10 @@ public class Enemy : MonoBehaviour
                 // the param passed in goes to player.cs
                 _player.AddScore(10);
             }
-            // trigger explosion animation
-            // Destroy enemy
-            Destroy(this.gameObject);
+            // trigger explosion animation pass in its name 
+            _anim.SetTrigger("OnEnemyDeath");
+            // Destroy enemy but give the animation a sec to play first
+            Destroy(this.gameObject,2.8f);
         }
 
     }
