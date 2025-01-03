@@ -13,6 +13,7 @@ public class Asteroid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // rotate object on z continuously 
+        // going to need to do something with transform.position
     }
 }
