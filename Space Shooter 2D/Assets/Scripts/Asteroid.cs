@@ -5,7 +5,7 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour
 {
     [SerializeField]
-    private float _rotateSpeed = 3.0f;
+    private float _rotateSpeed = 19.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,7 @@ public class Asteroid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // pass in the axis to rotate
         transform.Rotate(Vector3.forward* _rotateSpeed * Time.deltaTime);
    
     }
