@@ -17,7 +17,8 @@ public class Asteroid : MonoBehaviour
     {
         // pass in the axis to rotate
         transform.Rotate(Vector3.forward* _rotateSpeed * Time.deltaTime);
-   
+  
+
     }
     
 }
