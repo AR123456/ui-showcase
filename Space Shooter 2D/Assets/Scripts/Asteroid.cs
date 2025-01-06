@@ -20,9 +20,10 @@ public class Asteroid : MonoBehaviour
     {
         if (other.tag == "Laser")
         {
-            //trigger explosion animation 
-            // instantiate explosion at postion of the astorid (us)
+           // instantiate explosion at postion of the astorid (us)
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+            // destroy the laser
+            Destroy(other.gameObject);
             // destroy the asteroid
             Destroy(this.gameObject);
              }
