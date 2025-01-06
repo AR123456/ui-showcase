@@ -6,10 +6,9 @@ public class Asteroid : MonoBehaviour
 {
     [SerializeField]
     private float _rotateSpeed = 19.0f;
-        [SerializeField]
-   private bool _isExplosionActive=false;
+     // creating and serialize to make visibel need to add from unity inspector
     [SerializeField]
-    private GameObject _laserPrefab;
+    private GameObject _explosionPrefab;
     // Update is called once per frame
     void Update()
     {
@@ -22,19 +21,12 @@ public class Asteroid : MonoBehaviour
         if (other.tag == "Laser")
         {
             //trigger explosion animation 
-           ExplosionActive();
-            
+  
         }
     }
 
     // instantiate explosion at postion of the astorid (us)
-     public void ExplosionActive(){
-     _isExplosionActive=true;
-        StartCoroutine(OnLaserHitAsteroidPowerDownRoutine());
-      }
+ 
     // clean up after 3 sec 
-      IEnumerator OnLaserHitAsteroidPowerDownRoutine(){
-      yield return new WaitForSeconds(3.0f);
-        _isExplosionActive = false;
-      }
+  
 }
