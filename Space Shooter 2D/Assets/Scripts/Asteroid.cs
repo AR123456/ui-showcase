@@ -24,8 +24,8 @@ public class Asteroid : MonoBehaviour
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             // destroy the laser
             Destroy(other.gameObject);
-            // destroy the asteroid- pass in delay
-            Destroy(this.gameObject, 0.25f);
+            // destroy the asteroid
+            Destroy(this.gameObject);
              }
     }
 
