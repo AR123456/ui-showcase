@@ -23,7 +23,10 @@ public class SpawnManager : MonoBehaviour
          
     }
         // Update is called once per frame
-    void Update(){ }
+    void Update(){
+    // move the spawns out of at start and put in update if laser hits asteroid 
+    
+    }
     // spawn game objects every 5 seconds (coroutine)
     // create a coroutine of type IEnumerator 
  IEnumerator SpawnEnemyRoutine()
