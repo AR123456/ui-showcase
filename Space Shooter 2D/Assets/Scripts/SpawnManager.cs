@@ -13,19 +13,11 @@ public class SpawnManager : MonoBehaviour
     // make this the powerup array- 
     private GameObject[] powerups;
     private bool _stopSpawning = false;
- 
-
-        // Start is called before the first frame update
-    void Start()
+    //calling StartSpawing()from asteroid
+ public void StartSpawning()
     {
         StartCoroutine(SpawnEnemyRoutine());
         StartCoroutine(SpawnPowerupRoutine());
-         
-    }
-        // Update is called once per frame
-    void Update(){
-    // move the spawns out of at start and put in update if laser hits asteroid 
-    
     }
     // spawn game objects every 5 seconds (coroutine)
     // create a coroutine of type IEnumerator 
