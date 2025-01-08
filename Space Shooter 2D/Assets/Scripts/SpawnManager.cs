@@ -23,6 +23,9 @@ public class SpawnManager : MonoBehaviour
     // create a coroutine of type IEnumerator 
  IEnumerator SpawnEnemyRoutine()
     {
+        // add a delay to let asteroid explode before spawning starts 
+        yield return new WaitForSeconds(3.0f);
+
         // in while loop only loop if player is alive
            while (_stopSpawning == false)
         {
@@ -37,6 +40,8 @@ public class SpawnManager : MonoBehaviour
        }
   
     IEnumerator SpawnPowerupRoutine() {
+        // add a delay to let asteroid explode before spawning starts 
+        yield return new WaitForSeconds(3.0f);
         // every 3-7 seconds spawn in a power up 
         // in while loop only loop if player is alive
         while (_stopSpawning == false)
