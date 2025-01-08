@@ -6,7 +6,7 @@ public class Asteroid : MonoBehaviour
 {
     [SerializeField]
     private float _rotateSpeed = 19.0f;
-     // creating and serialize to make visibel need to add from unity inspector
+     // creating and serialize to make visable need to add from unity inspector
     [SerializeField]
     private GameObject _explosionPrefab;
     // get ref to spawnmanger to call StartSpawning
@@ -38,8 +38,5 @@ public class Asteroid : MonoBehaviour
                      }
     }
 
-  
- 
-    // clean up after 3 sec 
   
 }

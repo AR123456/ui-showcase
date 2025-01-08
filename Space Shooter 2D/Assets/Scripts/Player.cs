@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     // serializedfiled exposes private, public vars are exposed there out of box
     [SerializeField]
     private float _speed = 3.5f;
-    [SerializeField]
     private float _speedMultiplier = 2;
     [SerializeField]
     private GameObject _laserPrefab;
@@ -19,7 +18,6 @@ public class Player : MonoBehaviour
     private GameObject _tripleShotPrefab;
     [SerializeField]
     private float _fireRate = 0.15f;
-    [SerializeField]
     private float _canFire = -1f;
     [SerializeField]
     private int _lives = 3;
@@ -33,8 +31,9 @@ public class Player : MonoBehaviour
    [SerializeField]
     private int _score;
     // declare var for handle to coponent UIManger in the cashe - put it in void Start() to find it
-    [SerializeField]
     private UIManager _uiManager;
+    // get ref to r and l engine game objects
+    [SerializeField]
 
     // Start is called before the first frame update
     void Start()
