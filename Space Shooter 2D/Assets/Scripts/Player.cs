@@ -115,6 +115,9 @@ public class Player : MonoBehaviour
         }
       // damage trait here take damage, removing live
        _lives--;
+        // if lives is 2 enable right engine smoke
+        // else if lives is 1 enable left engine smoke
+
         //change the sprite to reflect lives
         _uiManager.UpdateLives(_lives);
       if (_lives < 1)
