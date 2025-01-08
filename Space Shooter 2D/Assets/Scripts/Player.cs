@@ -28,12 +28,14 @@ public class Player : MonoBehaviour
     private bool _isShieldActive = false;
     [SerializeField]
     private GameObject _shieldVisualizer;
-   [SerializeField]
+    // get ref to r and l engine game objects
+    [SerializeField]
+    private GameObject _rightEngine, _leftEngine;
+    [SerializeField]
     private int _score;
     // declare var for handle to coponent UIManger in the cashe - put it in void Start() to find it
     private UIManager _uiManager;
-    // get ref to r and l engine game objects
-    [SerializeField]
+  
 
     // Start is called before the first frame update
     void Start()
@@ -115,8 +117,15 @@ public class Player : MonoBehaviour
       // damage trait here take damage, removing live
        _lives--;
         // if lives is 2 enable right engine smoke
+        if(_lives == 2)
+        {
+            _rightEngine.SetActive(true);
+        }
         // else if lives is 1 enable left engine smoke
-
+        if(_lives == 1)
+        {
+            _leftEngine.SetActive(true);
+        }
         //change the sprite to reflect lives
         _uiManager.UpdateLives(_lives);
       if (_lives < 1)
