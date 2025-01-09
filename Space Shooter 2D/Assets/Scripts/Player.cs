@@ -35,13 +35,7 @@ public class Player : MonoBehaviour
     private int _score;
     // declare var for handle to coponent UIManger in the cashe - put it in void Start() to find it
     private UIManager _uiManager;
-    // var to store audio file
-    [SerializeField]
-    private AudioClip _laserSoundClip;
-    // audio sorce component off of the player 
-    [SerializeField]
-    private AudioSource audioSource;
- 
+  
 
     // Start is called before the first frame update
     void Start()
@@ -62,7 +56,6 @@ public class Player : MonoBehaviour
         {
             Debug.LogError("The UI manager is null ");
         }
- 
     }
     // Update is called once per frame (about 60 frames per second)
     void Update()
@@ -88,7 +81,6 @@ public class Player : MonoBehaviour
         {
             Instantiate(_laserPrefab, transform.position + new Vector3(0, 1.05f, 0), Quaternion.identity);
         }
-        // play audio clip from scirpt  - use Play() method 
  
     }
     void CalculateMovement()
@@ -124,13 +116,13 @@ public class Player : MonoBehaviour
         }
       // damage trait here take damage, removing live
        _lives--;
-        // enable right engine smoke
+        // if lives is 2 enable right engine smoke
         if(_lives == 2)
         {
             _leftEngine.SetActive(true);
           
         }
-        //  enable left engine smoke
+        // else if lives is 1 enable left engine smoke
         else if(_lives == 1)
         {
             _rightEngine.SetActive(true);
