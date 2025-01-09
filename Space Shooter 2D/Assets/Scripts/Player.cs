@@ -116,13 +116,13 @@ public class Player : MonoBehaviour
         }
       // damage trait here take damage, removing live
        _lives--;
-        // enable right engine smoke
+        // if lives is 2 enable right engine smoke
         if(_lives == 2)
         {
             _leftEngine.SetActive(true);
           
         }
-        //  enable left engine smoke
+        // else if lives is 1 enable left engine smoke
         else if(_lives == 1)
         {
             _rightEngine.SetActive(true);
