@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     private UIManager _uiManager;
   // var to store the ref to audio clip in unity
   [SerializeField]
-  private GameObject _laserSound;
+  private AudioSource _laserSound;
 
     // Start is called before the first frame update
     void Start()
@@ -85,6 +85,7 @@ public class Player : MonoBehaviour
         }
         // play audio clip from scirpt  - use Play() method 
         _laserSound = GetComponent<AudioSource>();
+        _laserSound.Play();
     }
     void CalculateMovement()
     {
