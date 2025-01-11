@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
     // declare var for handle to coponent UIManger in the cashe - put it in void Start() to find it
     private UIManager _uiManager;
   // var to store the ref to audio clip in unity
+  [SerializeField]
+  private GameObject _laserSound;
 
     // Start is called before the first frame update
     void Start()
@@ -81,7 +83,8 @@ public class Player : MonoBehaviour
         {
             Instantiate(_laserPrefab, transform.position + new Vector3(0, 1.05f, 0), Quaternion.identity);
         }
- // play audio clip from scirpt 
+        // play audio clip from scirpt  - use Play() method 
+        _laserSound = GetComponent<AudioSource>();
     }
     void CalculateMovement()
     {
