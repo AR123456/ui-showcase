@@ -85,7 +85,14 @@ public class Player : MonoBehaviour
         }
         // play audio clip from scirpt  - use Play() method 
         _laserSound = GetComponent<AudioSource>();
-        _laserSound.Play();
+        if (_laserSound != null)
+        {
+            _laserSound.Play();
+        }
+        else
+        {
+            Debug.LogError("AudioSource is null on the player.");
+        }
     }
     void CalculateMovement()
     {
