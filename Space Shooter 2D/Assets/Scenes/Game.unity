@@ -400,6 +400,8 @@ MonoBehaviour:
   _rightEngine: {fileID: 465870186}
   _leftEngine: {fileID: 488394598}
   _score: 0
+  _laserSoundClip: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!212 &309606809
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -505,7 +507,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
