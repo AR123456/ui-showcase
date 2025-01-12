@@ -35,7 +35,12 @@ public class Player : MonoBehaviour
     private int _score;
     // declare var for handle to coponent UIManger in the cashe - put it in void Start() to find it
     private UIManager _uiManager;
-  // var to store the ref to audio clip in unity
+    // var to store audio file
+    [SerializeField]
+    private AudioClip _laserSoundClip;
+    // audio sorce component off of the player 
+    [SerializeField]
+    private AudioSource audioSource;
  
 
     // Start is called before the first frame update
