@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
             Instantiate(_laserPrefab, transform.position + new Vector3(0, 1.05f, 0), Quaternion.identity);
         }
         // play audio clip from scirpt  - use Play() method 
- 
+        _audioSource.Play();
     }
     void CalculateMovement()
     {
