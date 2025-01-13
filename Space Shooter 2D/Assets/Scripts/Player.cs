@@ -64,6 +64,17 @@ public class Player : MonoBehaviour
         {
             Debug.LogError("The UI manager is null ");
         }
+        // null check on audio 
+        if (_audioSource==null)
+        {
+            Debug.LogError("AudioSource on the player is null");
+        }
+        else
+        {
+            //.clip is a getter or a setter- here asigning clip
+            _audioSource.clip = _laserSoundClip;
+       
+        }
  
     }
     // Update is called once per frame (about 60 frames per second)
