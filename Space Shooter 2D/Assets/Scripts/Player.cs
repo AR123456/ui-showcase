@@ -38,9 +38,8 @@ public class Player : MonoBehaviour
     // var to store audio file
     [SerializeField]
     private AudioClip _laserSoundClip;
-    // audio sorce component off of the player 
-    [SerializeField]
-    private AudioSource audioSource;
+    // audio source component off of the player -with code void start()
+     private AudioSource _audioSource;
  
 
     // Start is called before the first frame update
@@ -52,6 +51,9 @@ public class Player : MonoBehaviour
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
         // find the UIManager traverse Player into canvas 
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        // assign audio source to the laser sound - already on the object so dont need to find the game object 
+        _audioSource = GetComponent<AudioSource>();
+
         // have _spawnManager.onPlayerDeath now so do a null check and then can use it 
         if (_spawnManager==null)
         {
