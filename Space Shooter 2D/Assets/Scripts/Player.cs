@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     private AudioClip _laserSoundClip;
     // audio source component off of the player -with code void start()
      private AudioSource _audioSource;
- 
+     
 
     // Start is called before the first frame update
     void Start()
