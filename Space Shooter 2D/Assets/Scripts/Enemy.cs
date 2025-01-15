@@ -10,12 +10,16 @@ public class Enemy : MonoBehaviour
     private Player _player;
     // ref/andle to enemys animator component
     private Animator _anim;
+    // ref to explosion AudioSource class
+    private AudioSource _audioSource;
 
      // Start is called before the first frame update
     void Start()
     {
         //define player cashed later used to update score 
         _player = GameObject.Find("Player").GetComponent<Player>();
+        // get audio souce from emenmy 
+        _audioSource = GetComponent<AudioSource>();
         // do a null check on player
         if (_player ==null)
         {
@@ -65,6 +69,8 @@ public class Enemy : MonoBehaviour
             _speed = 0; // so explosion dosent damage player
             //Destroy enemy but give the animation a sec to play first
             Destroy(this.gameObject,2.8f);
+            // play the explosion 
+            _audioSource.Play();
             }
           // if other tag is laser Destroy Laser then distroy us(enemy)
         if (other.tag =="Laser")
