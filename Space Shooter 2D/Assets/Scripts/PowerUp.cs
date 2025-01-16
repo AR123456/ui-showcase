@@ -11,7 +11,7 @@ public class PowerUp : MonoBehaviour
     [SerializeField]
     // initializing to set in inspector - will be avalible in prefabs
     private int powerupID;
-
+   
  
 
     // Update is called once per frame
