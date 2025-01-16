@@ -89,6 +89,8 @@ public class Enemy : MonoBehaviour
             _speed = 0;
             // Destroy enemy but give the animation a sec to play first
             Destroy(this.gameObject,2.8f);
+            // play the explosion 
+            _audioSource.Play();
         }
 
     }
