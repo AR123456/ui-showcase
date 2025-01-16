@@ -67,10 +67,11 @@ public class Enemy : MonoBehaviour
             // trigger explosion animation - pass in its name 
             _anim.SetTrigger("OnEnemyDeath");
             _speed = 0; // so explosion dosent damage player
+                        // play the explosion 
+            _audioSource.Play();
             //Destroy enemy but give the animation a sec to play first
             Destroy(this.gameObject,2.8f);
-            // play the explosion 
-            _audioSource.Play();
+        
             }
           // if other tag is laser Destroy Laser then distroy us(enemy)
         if (other.tag =="Laser")
@@ -87,10 +88,11 @@ public class Enemy : MonoBehaviour
             // trigger explosion animation pass in its name 
             _anim.SetTrigger("OnEnemyDeath");
             _speed = 0;
-            // Destroy enemy but give the animation a sec to play first
-            Destroy(this.gameObject,2.8f);
             // play the explosion 
             _audioSource.Play();
+            // Destroy enemy but give the animation a sec to play first
+            Destroy(this.gameObject,2.8f);
+        
         }
 
     }
