@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
             // trigger explosion animation - pass in its name 
             _anim.SetTrigger("OnEnemyDeath");
             _speed = 0; // so explosion dosent damage player
-                        // play the explosion 
+             // play the explosion  before destroy 
             _audioSource.Play();
             //Destroy enemy but give the animation a sec to play first
             Destroy(this.gameObject,2.8f);
@@ -88,7 +88,7 @@ public class Enemy : MonoBehaviour
             // trigger explosion animation pass in its name 
             _anim.SetTrigger("OnEnemyDeath");
             _speed = 0;
-            // play the explosion 
+            // play the explosion - before destroy 
             _audioSource.Play();
             // Destroy enemy but give the animation a sec to play first
             Destroy(this.gameObject,2.8f);
