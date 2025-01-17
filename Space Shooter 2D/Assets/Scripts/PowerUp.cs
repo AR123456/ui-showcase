@@ -11,7 +11,9 @@ public class PowerUp : MonoBehaviour
     [SerializeField]
     // initializing to set in inspector - will be avalible in prefabs
     private int powerupID;
-   
+    // ref to powerup sound - serialize to apply in inspector
+    [SerializeField]
+    private AudioClip _clip;
  
 
     // Update is called once per frame
