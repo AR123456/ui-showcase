@@ -14,8 +14,8 @@ public class PowerUp : MonoBehaviour
     // ref to powerup sound - serialize to apply in inspector
     [SerializeField]
     private AudioClip _clip;
+    
  
-
     // Update is called once per frame
     void Update()
     {
@@ -35,6 +35,9 @@ public class PowerUp : MonoBehaviour
        if(other.tag == "Player")
         {
             Player player = other.transform.GetComponent<Player>();
+            // audiosource calls play clip at point method - play at position of powerup
+            AudioSource.PlayClipAtPoint(_clip,transform.position);
+
             if (player !=null)
             {
               //ID for Powerups 0=tripleshot, 1=speed,2=Shields
