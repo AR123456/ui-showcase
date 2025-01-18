@@ -6,6 +6,7 @@ public class PowerUp : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 3.0f;
+ 
     // need to identify which power up using intiger system- give ids
     //ID for Powerups 0=tripleshot, 1=speed,2=Shields
     [SerializeField]
@@ -14,8 +15,7 @@ public class PowerUp : MonoBehaviour
     // ref to powerup sound - serialize to apply in inspector
     [SerializeField]
     private AudioClip _clip;
-    [SerializeField]
-    private float _powerVol; 
+ 
     // Update is called once per frame
     void Update()
     {
@@ -35,8 +35,8 @@ public class PowerUp : MonoBehaviour
        if(other.tag == "Player")
         {
             Player player = other.transform.GetComponent<Player>();
-            // audiosource calls play clip at point method - play at position of powerup
-            AudioSource.PlayClipAtPoint(_clip,transform.position,_powerVol);
+            // method plays at position of powerup
+              AudioSource.PlayClipAtPoint(_clip,transform.position);
 
             if (player !=null)
             {
