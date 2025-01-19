@@ -73,6 +73,10 @@ public class Enemy : MonoBehaviour
             _speed = 0;
             // play the explosion - before destroy 
             _audioSource.Play();
+            // collision of object should no longer be active - destroy the collider component
+            // any collider 2D that is on this object
+            Destroy(GetComponent<Collider2D>());
+
             // Destroy enemy but give the animation a sec to play first
             Destroy(this.gameObject,2.8f);
         
