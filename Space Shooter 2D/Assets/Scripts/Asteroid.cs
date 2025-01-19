@@ -1,25 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Asteroid : MonoBehaviour
 {
     [SerializeField]
     private float _rotateSpeed = 19.0f;
-     // creating and serialize to make visable need to add from unity inspector
     [SerializeField]
     private GameObject _explosionPrefab;
-    // get ref to spawnmanger to call StartSpawning
-     private SpawnManager _spawnManager;
+    private SpawnManager _spawnManager;
     private void Start()
     {
-        // at the start get spawn manager
+        // get spawn manager
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
     }
     // Update is called once per frame
     void Update()
     {
-        // pass in the axis to rotate
+        // axis to rotate
         transform.Rotate(Vector3.forward* _rotateSpeed * Time.deltaTime);
       }
     // check for Laser collission (trigger)

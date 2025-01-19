@@ -3,11 +3,10 @@
 using System.Collections.Generic;
 // MonoBehavior is from the Unity name space
 using UnityEngine;
-// Monobehavior unity specific term allow the drag and drop of scripts or behaviors into game objects to control them. 
+// Monobehavior unity specific allows drag and drop of scripts or behaviors into game objects 
 //MonoBehaviour comes with void Start() and void Update()
 public class Player : MonoBehaviour
 {
-    // serializedfiled exposes private, public vars are exposed there out of box
     [SerializeField]
     private float _speed = 3.5f;
     private float _speedMultiplier = 2;
@@ -33,46 +32,40 @@ public class Player : MonoBehaviour
     private GameObject _rightEngine, _leftEngine;
     [SerializeField]
     private int _score;
-    // declare var for handle to coponent UIManger in the cashe - put it in void Start() to find it
+    // UIManger in the cashe - put it in void Start() to find it
     private UIManager _uiManager;
-    // var to store audio file
     [SerializeField]
     private AudioClip _laserSoundClip;
-    // audio source component off of the player -with code void start()
     [SerializeField]
      private AudioSource _audioSource;
   
     // Start is called before the first frame update
     void Start()
     {
-        //positon as the start of the game (x,y,z)
-        transform.position = new Vector3(0, 0, 0);
-        // getting the spawnmanager 
+         transform.position = new Vector3(0, 0, 0);
+        // load at start 
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
         // find the UIManager traverse Player into canvas 
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
-        // assign audio source to the laser sound - already on the object so dont need to find the game object 
         _audioSource = GetComponent<AudioSource>();
 
-        // have _spawnManager.onPlayerDeath now so do a null check and then can use it 
         if (_spawnManager==null)
         {
             Debug.LogError("The Spawn Manager is Null");
         }
-        // null check for ui manager 
+  
         if (_uiManager==null)
         {
             Debug.LogError("The UI manager is null ");
         }
-        // null check on audio 
+   
         if (_audioSource==null)
         {
             Debug.LogError("AudioSource on the player is null");
         }
         else
         {
-            //.clip is a getter or a setter- here asigning clip
-            _audioSource.clip = _laserSoundClip;
+                _audioSource.clip = _laserSoundClip;
        
         }
  
@@ -81,16 +74,15 @@ public class Player : MonoBehaviour
     void Update()
     {
         CalculateMovement();
-        // when the space bar is pressed, fire laser if cooldown condition met
+
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > _canFire)
         {
             FireLaser();
         }
     }
-    // custom method resposible for all things movement related - call this from update 
+
     void FireLaser()
     {
-        // spawn game object  
         // keep track of this fire for next one
         _canFire = Time.time + _fireRate;
         if (_isTripleShotActive == true)
@@ -101,7 +93,7 @@ public class Player : MonoBehaviour
         {
             Instantiate(_laserPrefab, transform.position + new Vector3(0, 1.05f, 0), Quaternion.identity);
         }
-        // play audio clip from scirpt  - use Play() method 
+
         _audioSource.Play();
     }
     void CalculateMovement()
@@ -127,23 +119,21 @@ public class Player : MonoBehaviour
     }
     public void Damage()
     {
-        // if sheilds is active no damage no life lost
-        if (_isShieldActive == true)
+          if (_isShieldActive == true)
         {
             _isShieldActive = false;
-            // turn off the sheilds visualizer 
-            _shieldVisualizer.SetActive(false);
+             _shieldVisualizer.SetActive(false);
             return;
         }
-      // damage trait here take damage, removing live
+
        _lives--;
-        // enable right engine smoke
+   
         if(_lives == 2)
         {
             _leftEngine.SetActive(true);
           
         }
-        //  enable left engine smoke
+    
         else if(_lives == 1)
         {
             _rightEngine.SetActive(true);
@@ -157,7 +147,7 @@ public class Player : MonoBehaviour
              Destroy(this.gameObject);
         }
     }
-    // method to control powerup reference this in that script
+  
     public void TripleShotActive()
     {
         // tripleShotAcitve becomes true 
@@ -170,15 +160,15 @@ public class Player : MonoBehaviour
                 yield return new WaitForSeconds(5.0f);
         _isTripleShotActive = false;
      }
-    // method to control speed powerup, reference this in powerup script 
+
     public void SpeedBoostActive()
     {
         _isSpeedBoostActive = true;
-        // reset speed to -speed * _speedMultiplier
+
         _speed *= _speedMultiplier;
         StartCoroutine(SpeedBoostPowerDownRoutine());
     }
-    // method to handle speed powerdown, make it inactive 
+
     IEnumerator SpeedBoostPowerDownRoutine()
     {
         yield return new WaitForSeconds(5.0f);
@@ -187,15 +177,15 @@ public class Player : MonoBehaviour
         _speed /= _speedMultiplier;
     }
 
-    // Sheild acitve script to set to true and start coroutine, 
+ 
     public void SheildActive()
     {
         _isShieldActive = true;
-        // enable the visualizer 
+    
         _shieldVisualizer.SetActive(true);
      }
     
-    // paramiterpoint value from enemy when enemy shot by laser
+  
     public void AddScore(int points)
     {
         _score += points;

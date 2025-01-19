@@ -9,7 +9,7 @@ public class Explosion : MonoBehaviour
     void Start()
     {
       
-        // this will be called when the Explosion starts so just destroy
+        // called at Explosion start so destroy
         Destroy(this.gameObject, 3f);
                
     }

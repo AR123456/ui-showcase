@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
- // method to call with button click - public so unity can see it
  public void LoadGame() {
-        // load game scene - build settings position 2 in array index 1
+        // load game scene - array index 1
         SceneManager.LoadScene(1); 
     }
 }

@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     // method to call game over from the UIManager.cs  GameOverSequennce
     public void GameOver()
     {
-        // set is game over to true 
-         _isGameOver = true;
+           _isGameOver = true;
     }
 }

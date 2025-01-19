@@ -6,16 +6,13 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    // a handle to text component 
+
    [SerializeField]
     private Text _scoreText;
-    // handle lives display game oject image componet
     [SerializeField]
     private Image _LivesImg;
-    // handle to the lives sprites
     [SerializeField]
     private Sprite[] _liveSprites;
-    // text component for game over 
     [SerializeField]
     private Text _gameOverText;
     [SerializeField]
@@ -31,7 +28,7 @@ public class UIManager : MonoBehaviour
         _gameOverText.gameObject.SetActive(false);
         // assign the handle to component 
         _gameManager=GameObject.Find("Game_Manager").GetComponent<GameManager>();
-        // null check 
+    
         if (_gameManager == null)
         {
             Debug.LogError("GameManager is Null");
