@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
             float randomX = Random.Range(-8f,8f);
             transform.position = new Vector3(randomX, 5.75f, 0);
             // call fireEnemyLaser
+            FireEnemyLaser();
         }
     }
  
