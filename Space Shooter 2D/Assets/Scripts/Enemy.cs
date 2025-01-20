@@ -8,9 +8,7 @@ public class Enemy : MonoBehaviour
     private Player _player;
     private Animator _anim;
     private AudioSource _audioSource;
-    // bring in laser prefab serialize and add in unity
-    [SerializeField]
-    private GameObject _laserPrefab;
+ 
     void Start()
     {
         //define player cashed later used to update score 
@@ -37,8 +35,7 @@ public class Enemy : MonoBehaviour
         {
             float randomX = Random.Range(-8f,8f);
             transform.position = new Vector3(randomX, 5.75f, 0);
-            // call fireEnemyLaser
-            FireEnemyLaser();
+       
         }
     }
  
@@ -87,11 +84,7 @@ public class Enemy : MonoBehaviour
         }
 
     }
-    // dreate FireEnemyLaser(){
-    //  can use same logic as players firelaser but fire down 
-    // }
-    void FireEnemyLaser() {
-        Instantiate(_laserPrefab, transform.position + new Vector3(0, 1.05f, 0), Quaternion.identity);
-    }
+ 
+ 
 
 }
