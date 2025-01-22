@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
     private Player _player;
     private Animator _anim;
     private AudioSource _audioSource;
+    [SerializeField]
+    // game object to store referenct to its prefab
+    private GameObject _laserPrefab;
  
     void Start()
     {
