@@ -11,6 +11,10 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     // game object to store referenct to its prefab
     private GameObject _laserPrefab;
+    [SerializeField]
+    private float _fireRate = 3.0f;
+    // can fire -1  for if check 
+    private float _canFire = -1.0f;
  
     void Start()
     {
