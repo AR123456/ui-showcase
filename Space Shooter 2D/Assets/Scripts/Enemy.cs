@@ -32,16 +32,23 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CalculateMovement();
+    }
+ // moving movement code out of update into its own methond to ease debugging 
+
+    void CalculateMovement()
+    {
         // 4 meters per second
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
-              if (transform.position.y <= -5f)
+        if (transform.position.y <= -5f)
         {
-            float randomX = Random.Range(-8f,8f);
+            float randomX = Random.Range(-8f, 8f);
             transform.position = new Vector3(randomX, 5.75f, 0);
-       
+
         }
     }
- 
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         //  damage Player (lives system) and then Destroy us (enemy) 
