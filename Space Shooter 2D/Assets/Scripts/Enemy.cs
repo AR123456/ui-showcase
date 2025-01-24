@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float _fireRate = 3.0f;
     // can fire -1  for if check 
-    private float _canFire = -1.0f;
+    private float _canFire = -1;
  
     void Start()
     {
@@ -37,6 +37,11 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         CalculateMovement();
+        if (Time.time > _canFire) {
+            // randomize _fireRate
+            _fireRate = Random.Range(3f, 7f);
+            _canFire = Time.time + _fireRate;
+        }
     }
  // moving movement code out of update into its own methond to ease debugging 
 
