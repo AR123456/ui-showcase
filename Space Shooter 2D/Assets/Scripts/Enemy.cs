@@ -38,6 +38,8 @@ public class Enemy : MonoBehaviour
     {
         CalculateMovement();
         if (Time.time > _canFire) {
+            // randomize _fireRate
+            _fireRate = Random.Range(3f, 7f);
             _canFire = Time.time + _fireRate;
         }
     }
