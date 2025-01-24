@@ -41,6 +41,9 @@ public class Enemy : MonoBehaviour
             // randomize _fireRate
             _fireRate = Random.Range(3f, 7f);
             _canFire = Time.time + _fireRate;
+            Instantiate(_laserPrefab, transform.position, Quaternion.identity);
+            // adding debug to pause game while I check the prefab
+            Debug.Break();
         }
     }
  // moving movement code out of update into its own methond to ease debugging 
