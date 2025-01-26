@@ -44,6 +44,7 @@ public class Laser : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    // call from Enemy - CalculateMovement() method
     public void AssignEnemyLaser()
     {
         _isEnemyLaser = true;

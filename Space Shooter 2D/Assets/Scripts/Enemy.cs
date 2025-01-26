@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
             // randomize _fireRate
             _fireRate = Random.Range(3f, 7f);
             _canFire = Time.time + _fireRate;
+            // to call this from Laser put this instantiate into a game object 
             Instantiate(_laserPrefab, transform.position, Quaternion.identity);
             // adding debug to pause game while I check the prefab
             Debug.Break();
