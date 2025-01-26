@@ -42,9 +42,13 @@ public class Enemy : MonoBehaviour
             _fireRate = Random.Range(3f, 7f);
             _canFire = Time.time + _fireRate;
             // to call this from Laser put this instantiate into a game object 
-            Instantiate(_laserPrefab, transform.position, Quaternion.identity);
-            // adding debug to pause game while I check the prefab
-            Debug.Break();
+           GameObject enemyLaser= Instantiate(_laserPrefab, transform.position, Quaternion.identity);
+            Laser[] lasers = enemyLaser.GetComponentsInChildren<Laser>();
+            // loop the array to collect the lasers 
+            for (int i = 0; i < lasers.Length; i++)
+            {
+                lasers[i].AssignEnemyLaser();
+            }
         }
     }
  // moving movement code out of update into its own methond to ease debugging 
