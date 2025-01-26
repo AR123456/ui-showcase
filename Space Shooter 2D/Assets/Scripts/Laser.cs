@@ -49,4 +49,12 @@ public class Laser : MonoBehaviour
     {
         _isEnemyLaser = true;
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // check for player hit by laser
+        if (other.tag=="Player" && _isEnemyLaser==true)
+        {
+// create ref to player and get player component so we can get to its damage method 
+        }
+    }
 }
