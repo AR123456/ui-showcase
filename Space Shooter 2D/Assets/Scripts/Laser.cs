@@ -54,7 +54,14 @@ public class Laser : MonoBehaviour
         // check for player hit by laser
         if (other.tag=="Player" && _isEnemyLaser==true)
         {
-// create ref to player and get player component so we can get to its damage method 
+            // create ref to player and get player component so we can get to its damage method 
+            Player player = other.GetComponent<Player>();
+            // check to see if the player component is on the thing we hit
+            if (player !=null)
+            {
+                // call the players method to apply damage 
+                player.Damage();
+            }
         }
     }
 }
