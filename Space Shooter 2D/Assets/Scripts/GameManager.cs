@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
             // can be scene index or scene name
             SceneManager.LoadScene(1);// index 1 is "Game"
         }
+        // if escape key is pressed quit application 
+        if (Input.GetKeyDown(KeyCode.Escape));
      }
     // method to call game over from the UIManager.cs  GameOverSequennce
     public void GameOver()
