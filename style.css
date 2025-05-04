@@ -3,3 +3,7 @@ svg {
   height: 24px;
   width: 24px; */
 }
+.back {
+  height: 3rem;
+  background-color: rgb(211, 204, 204);
+}
