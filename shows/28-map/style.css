@@ -36,8 +36,8 @@ body {
   filter: drop-shadow(40px 31px 15px #000000);
 }
 .wrapper {
-  perspective: 1474px;
-  perspective-origin: 54% 2%;
+  /* perspective: 1474px; */
+  /* perspective-origin: 54% 2%; */
 }
 .card {
   background: url("./estes.jpg");
