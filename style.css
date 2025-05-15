@@ -7,3 +7,8 @@ svg {
   height: 3rem;
   background-color: rgb(211, 204, 204);
 }
+#scroll-to-bottom {
+}
+a {
+  text-decoration: none;
+}
