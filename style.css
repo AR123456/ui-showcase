@@ -1,0 +1,42 @@
+body {
+  background-image: url("./paper-fibers.png");
+}
+
+.back {
+  height: 3rem;
+  background-color: rgb(211, 204, 204);
+}
+
+a {
+  text-decoration: none;
+}
+#next-button {
+  margin-left: 1rem;
+}
+#prev-button {
+  margin-right: 1rem;
+}
+#pagination {
+  margin-bottom: -1rem;
+}
+
+button.page-link {
+  color: #8ba5a5;
+}
+button.page-link:hover {
+  color: #8ba5a5;
+}
+
+.active > .page-link,
+.page-link.active {
+  z-index: 3;
+  color: var(--bs-pagination-active-color);
+  /* background-color: var(--bs-pagination-active-bg); */
+  background-color: #8ba5a5;
+  border-color: var(--bs-pagination-active-border-color);
+}
+.bg-body-tertiary {
+  --bs-bg-opacity: 1;
+  /* background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important; */
+  background-color: transparent !important;
+}
