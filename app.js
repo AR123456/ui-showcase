@@ -105,9 +105,13 @@ function renderPagination() {
 }
 
 function updateDisplay() {
-  renderCards(currentPage);
-  renderPagination();
-  updateTopButtons();
+  container.classList.add("fade-out");
+  setTimeout(() => {
+    renderCards(currentPage);
+    renderPagination();
+    updateTopButtons();
+    container.classList.remove("fade-out");
+  }, 200);
 }
 // side buttons
 function updateTopButtons() {
