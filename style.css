@@ -9,7 +9,7 @@ body {
 /* Card container transition */
 #card-container {
   opacity: 1;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.2s ease;
 }
 
 #card-container.fade-out {
